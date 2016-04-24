@@ -55,6 +55,13 @@ $compressedBreakpoint: 508px;
   @include retinaImage("./assets/images/#{$name}.png", "./assets/images/#{$name}_2x.png", $width, $height);
 }
 
+@mixin lowResImage($name, $width, $height) {
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-image: url("./assets/images/#{$name}.png");
+}
+
 @mixin scrollbar($color: rgba(#454D58, 0.4)) {
   &::-webkit-scrollbar {
     width: 16px;
@@ -231,7 +238,7 @@ body {
   font-size: 18px;
   margin: 0 auto;
   margin-bottom: 28px;
-  max-width: 800px;
+  max-width: 700px;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 16px;
@@ -242,4 +249,22 @@ body {
     font-size: 14px;
     margin-bottom: 22px;
   }
+}
+
+.caption {
+  font-size: 14px;
+  color: #5C6871;
+  margin: 0 auto;
+  max-width: 600px;
+  margin-bottom: 28px;
+  text-align: center;
+  font-style: italic;
+}
+
+.image {
+  margin: 10px auto;
+}
+
+.image--aa1-gameplay-example {
+  @include lowResImage('aa1_gameplay_example', 760px, 675px);
 }
