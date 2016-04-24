@@ -5,6 +5,7 @@
 
 $bodyRadius: 6px;
 $bodyWidth: 1200px;
+$contentWidth: 700px;
 
 // Responsive
 
@@ -238,7 +239,7 @@ body {
   font-size: 18px;
   margin: 0 auto;
   margin-bottom: 28px;
-  max-width: 700px;
+  max-width: $contentWidth;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 16px;
@@ -280,3 +281,26 @@ body {
 .image--aa1-gameplay-example {
   @include lowResImage('aa1_gameplay_example', 760px, 675px);
 }
+
+.panel {
+  max-width: $contentWidth;
+  margin: 0 auto 24px;
+  border: 1px solid #D1D6DF;
+  padding: 30px;
+  box-shadow: 0 4px 0 rgba(black, 0.05);
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+  .panelTitle {
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .panelTitle--advice {
+    color: #3171A1;
+  }
+
+  .panel__p {
+    margin-bottom: 24px;
+  }
