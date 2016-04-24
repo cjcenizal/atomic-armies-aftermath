@@ -251,18 +251,30 @@ body {
   }
 }
 
+
+.divider {
+  text-align: center;
+  border: 0;
+  margin-bottom: 28px;
+
+  &:before {
+    content: '...';
+    letter-spacing: 10px;
+  }
+}
+
 .caption {
   font-size: 14px;
   color: #5C6871;
   margin: 0 auto;
-  max-width: 600px;
-  margin-bottom: 28px;
+  max-width: 400px;
+  margin-bottom: 34px;
   text-align: center;
   font-style: italic;
 }
 
 .image {
-  margin: 10px auto;
+  margin: 36px auto 10px;
 }
 
 .image--aa1-gameplay-example {
