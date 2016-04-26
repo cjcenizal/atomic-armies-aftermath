@@ -10,6 +10,7 @@ const cssMqpacker = require('css-mqpacker');
 const del = require('del');
 const gulp = require('gulp');
 const gulpCompass = require('gulp-compass');
+const gulpConcat = require('gulp-concat');
 const gulpConnect = require('gulp-connect');
 const gulpJade = require('gulp-jade');
 const gulpPostcss = require('gulp-postcss');
@@ -40,11 +41,12 @@ gulp.task('copyAssets', () => {
     .pipe(gulpConnect.reload());
 });
 
-gulp.task('copyJs', () => {
-  return gulp
-    .src(`${SOURCE_DIR}/index.js`)
-    .pipe(gulp.dest(DISTRIBUTION_DIR))
-    .pipe(gulpConnect.reload());
+gulp.task('compileJs', () => {
+  return gulp.src([
+      './vendor/zepto.min.js',
+      './src/index.js'
+    ]).pipe(gulpConcat('index.js'))
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('compileHtml', () => {
@@ -103,7 +105,7 @@ gulp.task('compileCss:applyPostCss', () => {
 gulp.task('watch', [
   'serve',
   'copyAssets',
-  'copyJs',
+  'compileJs',
   'compileHtml',
   'compileCss',
 ], () => {
@@ -116,8 +118,8 @@ gulp.task('watch', [
   gulp.watch([`${SOURCE_DIR}/**/*.scss`], [
     'compileCss',
   ]);
-  gulp.watch([`${SOURCE_DIR}/index.js`], [
-    'copyJs',
+  gulp.watch([`${SOURCE_DIR}/**/*.js`], [
+    'compileJs',
   ]);
 });
 

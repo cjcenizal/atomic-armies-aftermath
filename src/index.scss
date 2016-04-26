@@ -56,12 +56,12 @@ $compressedBreakpoint: 508px;
   @include retinaImage("./assets/images/#{$name}.png", "./assets/images/#{$name}_2x.png", $width, $height);
 }
 
-@mixin lowResImage($name, $width, $height) {
-  width: $width;
-  height: $height;
-  background-repeat: no-repeat;
-  background-image: url("./assets/images/#{$name}.png");
-}
+// @mixin lowResImage($name, $width, $height) {
+//   width: $width;
+//   height: $height;
+//   background-repeat: no-repeat;
+//   background-image: url("./assets/images/#{$name}.png");
+// }
 
 @mixin scrollbar($color: rgba(#454D58, 0.4)) {
   &::-webkit-scrollbar {
@@ -252,6 +252,27 @@ body {
   }
 }
 
+.p--intro {
+  &:first-child:first-letter {
+    float: left;
+    font-size: 96px;
+    line-height: 60px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-left: 3px;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      font-size: 80px;
+      padding-top: 4px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      font-size: 40px;
+      line-height: 40px;
+      padding-top: 0;
+    }
+  }
+}
 
 .divider {
   text-align: center;
@@ -274,22 +295,42 @@ body {
   font-style: italic;
 }
 
-.image {
+.media {
+  display: block;
   margin: 36px auto 10px;
 }
 
-.image--aa1-gameplay-example {
-  @include lowResImage('aa1_gameplay_example', 760px, 675px);
+.imageContainer {
+  display: block;
+}
+
+.image {
+  display: block;
+  margin: 36px auto 10px;
+  height: auto;
+  max-width: 100%;
 }
 
 .panel {
   max-width: $contentWidth;
   margin: 0 auto 24px;
   border: 1px solid #D1D6DF;
-  padding: 30px;
+  padding: 30px 50px 16px;
   box-shadow: 0 4px 0 rgba(black, 0.05);
   font-size: 16px;
   border-radius: 4px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 14px;
+    padding: 16px 18px 2px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
   .panelTitle {
@@ -302,5 +343,6 @@ body {
   }
 
   .panel__p {
+    color: #737E86;
     margin-bottom: 24px;
   }

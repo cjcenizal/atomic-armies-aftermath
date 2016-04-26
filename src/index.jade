@@ -1,15 +1,15 @@
 doctype html
-html(lang='en')
+html(lang="en")
   head
 
     title Atomic Armies: Aftermath
 
     meta(
-      charset='utf-8'
+      charset="utf-8"
     )
 
     meta(
-      name='viewport'
+      name="viewport"
       content="width=device-width, initial-scale=1"
     )
 
@@ -22,10 +22,10 @@ html(lang='en')
 
     //- CSS
     link(
-      type='text/css'
-      rel='stylesheet'
-      media='all'
-      href='./index.css?v=#{DATE_TIME}'
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+      href="./index.css?v=#{DATE_TIME}"
     )
 
   body
@@ -40,14 +40,17 @@ html(lang='en')
 
       .bodyContent
 
-        p.p.
-          This is the story of how I spent 18 months struggling to become an entrepreneur, indie game dev, and millionaire before 30. Long story short: I failed. During that time, I made some of the biggest mistakes of my life, met some of the most amazing people I&rsquo;ve ever known, and managed to muddle my way into building some weird, awesome stuff.
+        p.p.p--intro.
+          This is the story of how I spent 18 months on a journey to become an entrepreneur, indie game dev, and millionaire before 30. Long story short: I failed! During that time, I made some of the biggest mistakes of my life, met some of the most amazing people I&rsquo;ve ever known, and managed to muddle my way into building some weird, awesome stuff.
 
         p.p.
           I spent most of that time developing a game called Atomic Armies. Here&rsquo;s what the game looked like when I decided to pull the plug:
 
         figure
-          .image.image--aa1-gameplay-example
+          .image.js-image(
+            data-src="aa1_gameplay_example"
+            data-low-res
+          )
           figcaption.caption.
             After putting so much time into this game, giving it up was one of the hardest things I&rsquo;ve ever done.
 
@@ -66,11 +69,16 @@ html(lang='en')
           .panelTitle.panelTitle--advice
             | Advice: When to quit your day job
           p.panel__p.
-            TLDR: Take risks when you&rsquo;re young, and move on from jobs with low returns on investment.
+            I think if you feel like you&rsquo;re getting less out of your job than you&rsquo;re putting in, then it&rsquo;s a good time to leave. And this is especially true when you&rsquo;re young and have fewer responsibilities, because that&rsquol;s the best time you can take risks and recover from failure.
           p.panel__p.
-            I knew I wanted to marry the woman I was dating, and I knew that I really wanted to settle down (house, wife, kids, etc) at some point. Realistically, that was going to have to happen within the next 5 years, since biologically, women have the best chances at a healthy pregnancy before 35. So I had a window in which I could attempt my reach goals before I had to shift my focus to family and all that grown-up stuff.
+            In terms of my job, I had become really good at writing one-off programs that generated interesting visual effects, but I felt like I had hit a plateau. I wasn&rsquo;t learning anything new and I felt like I was wasting my time.
           p.panel__p.
-            Up until this point, I had invested a lot of time in building a successful career as a creative coder. I had become really good at writing one-off programs that generated interesting visual effects, but I felt like I had hit a plateau. I wasn&rsquo;t learning anything new, and I wasn&rsquo;t able to build upon any of my previous work &mdash; my code for each project was essentially a rehash of the previous project. I no longer found satisfaction in my job, so the return on my time-investment was negative. In other words, I felt like I was wasting my time.
+            In terms of risk, I knew I wanted to marry Karla, and down that road lay responsibilities like car loans, a mortgage, and kids. Women have the best chance at a healthy pregnancy before 35, so I had a pretty hard window in which I could attempt my reach goals before I had to get serious about being a grown-up.
+
+
+    script(
+      src="./index.js?v=#{DATE_TIME}"
+    )
 
     //- Google Analytics
     script.
