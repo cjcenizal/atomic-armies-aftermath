@@ -135,7 +135,8 @@ body {
     margin: 0 auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    padding: 20px 30px 40px;
+    // padding: 20px 30px 40px;
+    padding: 20px 0 40px;
   }
 }
 
@@ -268,6 +269,7 @@ body {
   @include whenNarrowerThan($compressedBreakpoint) {
     font-size: 14px;
     margin-bottom: 22px;
+    padding: 0 30px;
   }
 }
 
@@ -298,6 +300,10 @@ body {
   margin: 0 auto;
   margin-bottom: 28px;
   max-width: $contentWidth;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 30px;
+  }
 }
 
 .divider {
@@ -319,6 +325,10 @@ body {
   margin-bottom: 34px;
   text-align: center;
   font-style: italic;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 30px;
+  }
 }
 
 .media {
@@ -335,16 +345,20 @@ body {
   margin: 36px auto 10px;
   height: auto;
   max-width: 100%;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 10px;
+  }
 }
 
 .panel {
   max-width: $contentWidth;
   margin: 0 auto 24px;
-  border: 1px solid #D1D6DF;
   padding: 30px 50px 16px;
-  box-shadow: 0 4px 0 rgba(black, 0.05);
   font-size: 16px;
   border-radius: 4px;
+  background-color: #F2FAFC;
+  color: #3171A1;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 14px;
@@ -355,7 +369,8 @@ body {
     border-left: 0;
     border-right: 0;
     border-radius: 0;
-    box-shadow: none;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -364,11 +379,6 @@ body {
     font-weight: 700;
   }
 
-  .panelTitle--advice {
-    color: #3171A1;
-  }
-
   .panel__p {
-    color: #737E86;
     margin-bottom: 24px;
   }
