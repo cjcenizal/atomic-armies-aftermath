@@ -96,20 +96,6 @@ $contentWidth: 700px;
   }
 }
 
-.caption {
-  font-size: 14px;
-  color: #5C6871;
-  margin: 0 auto;
-  max-width: 400px;
-  margin-bottom: 34px;
-  text-align: center;
-  font-style: italic;
-
-  @include whenNarrowerThan($compressedBreakpoint) {
-    padding: 0 30px;
-  }
-}
-
 .media {
   display: block;
   margin: 36px auto 10px;
@@ -130,14 +116,30 @@ $contentWidth: 700px;
   }
 }
 
+.caption {
+  font-size: 14px;
+  color: #5C6871;
+  margin: 0 auto;
+  max-width: 600px;
+  margin-bottom: 34px;
+  text-align: center;
+  font-style: italic;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 30px;
+  }
+}
+
 .panel {
   max-width: $contentWidth;
-  margin: 0 auto 24px;
+  margin: 0 auto;
   padding: 30px 50px 16px;
   font-size: 16px;
   border-radius: 4px;
   background-color: #F2FAFC;
   color: #3171A1;
+
+  @include contentItemRhythm;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 14px;
@@ -160,4 +162,42 @@ $contentWidth: 700px;
 
   .panel__p {
     margin-bottom: 24px;
+  }
+
+.quote {
+  border-left: 6px solid rgba(black, 0.1);
+  padding-left: 30px;
+
+  @include contentItem;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    padding-left: 20px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    border-left-width: 15px;
+    padding-left: 15px;
+  }
+}
+
+  .quoteBody {
+    font-size: 26px;
+    font-weight: 300;
+    opacity: 0.75;
+    margin-bottom: 10px;
+    font-style: italic;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      font-size: 20px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      font-size: 18px;
+    }
+  }
+
+  .quoteFooter {
+    font-size: 14px;
+    font-style: italic;
+    color: #5C6871;
   }
