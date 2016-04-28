@@ -1,0 +1,66 @@
+
+// Responsive
+
+$largeBreakpoint: 1200px;
+$mediumBreakpoint: 900px;
+$condensedBreakpoint: 900px;
+$compressedBreakpoint: 508px;
+
+/**
+ * Mixins
+ */
+
+@mixin whenNarrowerThan($browserWidth) {
+  @media only screen and (max-width: #{$browserWidth}) {
+    @content;
+  }
+}
+
+@mixin retinaBackground($image, $retinaImage, $size, $repeat:false, $color:false) {
+  background-image: url($image);
+  background-size: $size;
+  @if $repeat {
+    background-repeat: $repeat;
+  }
+  @if $color {
+    background-color: $color;
+  }
+
+  // Retina only
+  @media (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url($retinaImage);
+  }
+}
+
+/**
+ * Apply this to a div to size the element to fit the image, and then display
+ * a retina image on retina displays.
+ */
+@mixin retinaImage($imagePath, $retinaImagePath, $width, $height) {
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  $size: #{$width} #{$height};
+  @include retinaBackground($imagePath, $retinaImagePath, $size);
+}
+
+@mixin storyImage($name, $width, $height) {
+  @include retinaImage("./assets/images/#{$name}.png", "./assets/images/#{$name}_2x.png", $width, $height);
+}
+
+@mixin scrollbar($color: rgba(#454D58, 0.4)) {
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}

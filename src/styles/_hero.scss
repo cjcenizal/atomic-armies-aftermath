@@ -1,0 +1,96 @@
+
+.hero {
+  position: relative;
+  margin: 0 auto;
+  max-width: $bodyWidth;
+  height: 274px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    margin-top: -88px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    margin-top: -131px;
+  }
+}
+
+  .heroBg {
+    @include storyImage('hero_bg', 1200px, 166px);
+    width: 100%;
+    max-width: 1200px;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: $bodyRadius;
+    border-top-right-radius: $bodyRadius;
+    overflow: hidden;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      height: 140px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      height: 166px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .heroGeneral {
+    @include storyImage('hero_general', 460px, 274px);
+    position: absolute;
+    left: 50%;
+    margin-left: -230px;
+    transform-origin: center bottom;
+
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      transform: scale(0.65);
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      transform: scale(0.5);
+    }
+  }
+
+  .heroLogo {
+    @include storyImage('hero_logo', 563px, 80px);
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    margin-left: -281px;
+    transform-origin: center bottom;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      transform: scale(0.65);
+      bottom: 6px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      transform: scale(0.5);
+      bottom: 2px;
+    }
+  }
+
+.heroAftermath {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  max-width: $bodyWidth;
+  height: 50px;
+  background-color: #080C13;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    height: 35px;
+  }
+}
+
+  .heroAftermath__copy {
+    @include storyImage('hero_aftermath', 314px, 19px);
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      transform: scale(0.65);
+    }
+  }

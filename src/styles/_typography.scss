@@ -1,0 +1,163 @@
+
+$contentWidth: 700px;
+
+@mixin contentItem {
+  margin: 0 auto;
+  max-width: $contentWidth;
+
+  @include contentItemRhythm;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 30px;
+  }
+}
+
+@mixin contentItemRhythm {
+  margin-bottom: 28px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    margin-bottom: 24px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    margin-bottom: 22px;
+  }
+}
+
+.list {
+  font-size: 18px;
+
+  @include contentItem;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 16px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 14px;
+  }
+
+  li {
+    @include contentItemRhythm;
+  }
+}
+
+.p {
+  font-size: 18px;
+
+  @include contentItem;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 16px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 14px;
+  }
+}
+
+.p--intro {
+  &:first-child:first-letter {
+    float: left;
+    font-size: 96px;
+    line-height: 60px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-left: 3px;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      font-size: 80px;
+      padding-top: 4px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      font-size: 40px;
+      line-height: 40px;
+      padding-top: 0;
+    }
+  }
+}
+
+.h3 {
+  font-size: 20px;
+  @include contentItem;
+}
+
+.divider {
+  text-align: center;
+  border: 0;
+  margin-top: -10px;
+
+  @include contentItemRhythm;
+
+  &:before {
+    content: '...';
+    letter-spacing: 10px;
+  }
+}
+
+.caption {
+  font-size: 14px;
+  color: #5C6871;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: 34px;
+  text-align: center;
+  font-style: italic;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 30px;
+  }
+}
+
+.media {
+  display: block;
+  margin: 36px auto 10px;
+}
+
+.imageContainer {
+  display: block;
+}
+
+.image {
+  display: block;
+  margin: 36px auto 10px;
+  height: auto;
+  max-width: 100%;
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    padding: 0 10px;
+  }
+}
+
+.panel {
+  max-width: $contentWidth;
+  margin: 0 auto 24px;
+  padding: 30px 50px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #F2FAFC;
+  color: #3171A1;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 14px;
+    padding: 16px 18px 2px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+  .panelTitle {
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .panel__p {
+    margin-bottom: 24px;
+  }
