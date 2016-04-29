@@ -1,6 +1,30 @@
 
 $contentWidth: 700px;
 
+@mixin contentParagraph {
+  font-size: 18px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 16px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 14px;
+  }
+}
+
+@mixin contentHeading {
+  font-size: 26px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 20px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 18px;
+  }
+}
+
 @mixin contentItem {
   margin: 0 auto;
   max-width: $contentWidth;
@@ -25,17 +49,8 @@ $contentWidth: 700px;
 }
 
 .list {
-  font-size: 18px;
-
   @include contentItem;
-
-  @include whenNarrowerThan($condensedBreakpoint) {
-    font-size: 16px;
-  }
-
-  @include whenNarrowerThan($compressedBreakpoint) {
-    font-size: 14px;
-  }
+  @include contentParagraph;
 
   li {
     @include contentItemRhythm;
@@ -43,17 +58,8 @@ $contentWidth: 700px;
 }
 
 .p {
-  font-size: 18px;
-
   @include contentItem;
-
-  @include whenNarrowerThan($condensedBreakpoint) {
-    font-size: 16px;
-  }
-
-  @include whenNarrowerThan($compressedBreakpoint) {
-    font-size: 14px;
-  }
+  @include contentParagraph;
 }
 
 .p--intro {
@@ -79,13 +85,22 @@ $contentWidth: 700px;
 }
 
 .h1 {
-  font-size: 26px;
   @include contentItem;
+  @include contentHeading;
 }
 
 .h2 {
   font-size: 20px;
+
   @include contentItem;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 18px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 16px;
+  }
 }
 
 .divider {
@@ -192,26 +207,13 @@ $contentWidth: 700px;
     margin-bottom: 10px;
     font-style: italic;
 
-    @include whenNarrowerThan($condensedBreakpoint) {
-      font-size: 20px;
-    }
-
-    @include whenNarrowerThan($compressedBreakpoint) {
-      font-size: 18px;
-    }
+    @include contentHeading;
   }
 
   .quoteBody--small {
     opacity: 1;
-    font-size: 18px;
 
-    @include whenNarrowerThan($condensedBreakpoint) {
-      font-size: 16px;
-    }
-
-    @include whenNarrowerThan($compressedBreakpoint) {
-      font-size: 14px;
-    }
+    @include contentParagraph;
   }
 
     .quoteBody__p {
