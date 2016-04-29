@@ -50,3 +50,17 @@ body {
     padding: 20px 0 40px;
   }
 }
+
+del {
+  opacity: 0.75;
+}
+
+a {
+  color: #109E3C;
+
+  &:active,
+  &:hover,
+  &:visited {
+    color: #109E3C;
+  }
+}

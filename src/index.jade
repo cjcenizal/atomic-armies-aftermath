@@ -41,7 +41,7 @@ html(lang="en")
       .bodyContent
 
         h1.h1.
-          A post-mortem of a game-dev adventure
+          My Adventure into Game Dev: a Post-mortem
 
         p.p.p--intro.
           This is the story of how I spent 18 months on an adventure to become an entrepreneur, indie game dev, and millionaire before 30. Long story short: it didn&rsquo;t quite work out that way! During that time, I plenty of mistakes, but I also met some of the most amazing people I&rsquo;ve ever known and managed to build some of the coolest stuff I&rsquo;ve ever made.
@@ -56,8 +56,6 @@ html(lang="en")
           )
           figcaption.caption.
             KABOOM!
-
-        hr.divider
 
         p.p.
           Let&rsquo;s rewind to April, 2010. I was 26 years old, in love with an incredible woman named Karla (whom I would later marry), and I was starting to burn out at the tail-end of a successful visual effects career. For a few years I had been churning out renders of particle systems and simple physics simulations which were composited into commercials and then broadcast on TV. I would do this for a few months at a time, take a break for a week or two, and then repeat the cycle. I started to feel like Phil in Groundhog Day. I needed to break the cycle.
@@ -74,6 +72,8 @@ html(lang="en")
 
         p.p.
           At the time, Mafia Wars had just put Zynga on the map, dazzling tech journalists, entrepreneurs, and VCs with the magic of social gaming. &ldquo;Social&rdquo; was the buzzword of the day (later, &ldquo;mobile&rdquo; and &ldquo;local&rdquo; would usurp the throne). I decided this was my opportunity to quit my day job to fame, glory, and riches. I gave notice and I was on my own.
+
+        hr.divider
 
         h2.h2.
           Rough beginnings
@@ -114,6 +114,8 @@ html(lang="en")
         p.p.
           Fortunately, after a few months of screwing around and wasting my limited amount of money, I learned my lesson. I vowed to save my money and focused on developing my game until it was playable.
 
+        hr.divider
+
         h2.h2.
           The MVP: &ldquo;Armies&rdquo;
 
@@ -124,7 +126,7 @@ html(lang="en")
         p.p.
           This was the idea behind my MVP game, which I called &ldquo;Armies&rdquo;. The basic idea of the game was simple: you place units on a the left side of a battlefield, which move towards units on the right. When they meet in the middle, they fight. It was essentially an asynchronous multiplayer version of a Flash game I liked, called
           <a href="http://armorgames.com/play/4264/colony" target="_blank">Colony</a>,
-          but with some social game mechanics layered on. There was XP for leveling up, a friends list so you can pick which friend to attack, and a log of recent battles won and lost. And what would a social game be without virtual currency so you can buy stuff in the online store?
+          but with some social game mechanics layered on. There was a friends list so you can pick which friend to attack, a log of recent battles won and lost, and of course virtual currency to support my monetization strategy.
 
         p.p.
           Before I go on, I need to give a shout-out. While at GDC Vancouver, I met a few really talented art students, one of whom was kind of enough to help me out with artwork. Thanks
@@ -132,48 +134,14 @@ html(lang="en")
 
         figure
           .image.js-image(
-            data-src="aa0_cities"
-            data-type="jpg"
+            data-src="aa0_gameplay"
             data-low-res
           )
           figcaption.caption.
-            The single-player portion allowed you to attack NPCs, which would earn you a slow, steady stream of currency once conquered. It&rsquo;s like Farmville, but with guns.
+            Armies wasn&rsquo;t the prettiest belle at the ball, but it was playable.
 
-        figure
-          .image.js-image(
-            data-src="aa0_targets"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Waging war against your friends is just good, wholesome fun.
-
-        figure
-          .image.js-image(
-            data-src="aa0_attack"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Ready to attack? Set up your units in attack formation. This mechanic was inspired by the way the original StarCraft let you load up Dropships and Overlords.
-
-        figure
-          .image.js-image(
-            data-src="aa0_combat"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            &ldquo;Armies&rdquo; &mdash; I wonder what it&rsquo;s about?
-
-        figure
-          .image.js-image(
-            data-src="aa0_store"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Get units galore and more, at your local War Store.
+        p.p.
+          Armies had a single-player portion allowed you to attack NPCs, which would earn you a slow, steady stream of resources once conquered. It was inspired by Farmville&rsquo;s core game loop, but with war instead of farming. You could also wage war against your friends which, besides being more fun, would also earn you more resources. When you launched an attack, you would go through a set-up phase where you have to pick the units you want to send into battle and arrange them into a formation. This interaction was inspired by the way the original StarCraft let you load up Dropships and Overlords. With the resources you earned, you could buy more units.
 
         figure
           iframe.media(
@@ -184,7 +152,7 @@ html(lang="en")
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/261447261&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"
           )
           figcaption.caption.
-            It even had a custom soundtrack!
+            It even had a custom soundtrack, crafted by sound-genius <a href="http://www.manifestmusicproductions.com/" target="_blank">Adam Berg</a>.
 
         p.p.
           On June 27, 2010, I entered Armies into beta testing on Facebook. My friends helped me out a <strong>lot</strong> here. The trolls among them were the best. They played the most because they kept discovering game imbalance exploits and would use them to harass other players (I&rsquo;m looking at you, Damien, Ben, and Groves). I gathered some great feedback on what was fun and what wasn&rsquo;t.
@@ -192,12 +160,14 @@ html(lang="en")
         p.p.
           But as you can tell from the screenshots, the game looked a little rough around the edges. But then, in a pivotal moment in my life, all of that changed.
 
+        hr.divider
+
         h2.h2.
           Trent Kaniuga
 
         p.p.
           On July 25, 2010, I came upon the DeviantArt profile of a game concept artist named Trent Kaniuga. His work took my breath away. More specifically, it was
-          <a href="http://41.media.tumblr.com/tumblr_lfsjvmX8df1qd9jlto1_500.jpg" target=_"blank">this painting of a Marine battling Hydralisks</a> which knocked my socks off. This guy was a god of art and I really, really wanted to trick him into working on my game.
+          <a href="http://41.media.tumblr.com/tumblr_lfsjvmX8df1qd9jlto1_500.jpg" target=_"blank">this painting of a Marine battling Hydralisks</a> which knocked my socks off. This guy was a god of art and I really, really wanted to <del>trick</del> <ins>recruit</ins> him into working on my game.
 
         p.p.
           I spent an hour crafting the email I sent to him. Here are a couple snippets from my pitch:
@@ -242,6 +212,60 @@ html(lang="en")
           )
           figcaption.caption.
             Seeing this in my inbox made me feel like a kid on Christmas Day.
+
+        p.p.
+          Trent and I worked closely over the next few months. From that point on, he drove the creative vision behind the game and we came to see each other as partners in a joint venture. Now, years later, he&rsquo;s one of my closest friends and we continue to collaborate together on projects.
+
+        blockquote.panel
+          .panelTitle
+            | How to ask for help
+          p.panel__p.
+            The hardest part about asking for help is simply doing it. It&rsquo;s like how 90% of a job is simply showing up. If you want someone&rsquo;s help, just <em>ask</em>.
+          p.panel__p.
+            Beyond that, ask nicely. Show respect for the person by showing that you have done your homework and point out why you value you them. Show them how they can help you so they understand what you&rsquo;re asking them for and why. And show that you respect their time by not writing a novel when a few paragraphs will do.
+          p.panel__p.
+            And be honest. Rep yourself truthfully. If you really are a big shot with a huge budget and a stack of successes to sit on, then share that information. But if you&rsquo;re still in the gutter staring at the stars, be honest about that too.
+
+        hr.divider
+
+        h2.h2.
+          <em>Atomic</em> Armies
+
+        p.p.
+          November 15, 2010. I took down Armies and replaced it with the new, Trent-infused &ldquo;Atomic Armies&rdquo;. The gameplay was generally the same, but the artwork and UI was completely overhauled, and I had added a couple features like a step-by-step onboarding walk-through and an XP-based leveling system.
+
+        figure
+          .image.js-image(
+            data-src="aa1_logo"
+          )
+          figcaption.caption.
+            I&rsquo;ve always loved typography, so I also put together a new logo.
+
+        figure
+          .image.js-image(
+            data-src="aa1_gameplay"
+            data-low-res
+          )
+          figcaption.caption.
+            A little Trent magic made all the difference.
+
+        figure
+          .image.js-image(
+            data-src="aa1_units"
+          )
+          figcaption.caption.
+            All new units, in all their vector glory!
+
+        p.p.
+          I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I guess it was a pretty neat feature?
+
+        figure
+          .image.js-image(
+            data-src="aa1_cities"
+          )
+          figcaption.caption.
+            I made most of these &ldquo;City&rdquo; images while waiting to be called for jury duty.
+
 
     script(
       src="./index.js?v=#{DATE_TIME}"
