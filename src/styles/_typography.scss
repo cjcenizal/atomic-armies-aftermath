@@ -57,7 +57,7 @@ $contentWidth: 700px;
 }
 
 .p--intro {
-  &:first-child:first-letter {
+  &:first-letter {
     float: left;
     font-size: 96px;
     line-height: 60px;
@@ -78,7 +78,12 @@ $contentWidth: 700px;
   }
 }
 
-.h3 {
+.h1 {
+  font-size: 26px;
+  @include contentItem;
+}
+
+.h2 {
   font-size: 20px;
   @include contentItem;
 }
@@ -195,6 +200,23 @@ $contentWidth: 700px;
       font-size: 18px;
     }
   }
+
+  .quoteBody--small {
+    opacity: 1;
+    font-size: 18px;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      font-size: 16px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      font-size: 14px;
+    }
+  }
+
+    .quoteBody__p {
+      @include contentItemRhythm;
+    }
 
   .quoteFooter {
     font-size: 14px;
