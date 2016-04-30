@@ -141,10 +141,10 @@ html(lang="en")
             Armies wasn&rsquo;t the prettiest belle at the ball, but it was playable.
 
         p.p.
-          Armies had a single-player portion allowed you to attack NPCs, which would earn you a slow, steady stream of resources once conquered. It was inspired by Farmville&rsquo;s core game loop, but with war instead of farming. You could also wage war against your friends which, besides being more fun, would also earn you more resources. When you launched an attack, you would go through a set-up phase where you have to pick the units you want to send into battle and arrange them into a formation. This interaction was inspired by the way the original StarCraft let you load up Dropships and Overlords. With the resources you earned, you could buy more units.
+          Armies had a single-player portion allowed you to attack cities, which would earn you a slow, steady stream of resources once conquered. It was inspired by Farmville&rsquo;s core game loop, but with war instead of farming. You could also wage war against your friends which, besides being more fun, would also earn you more resources. When you launched an attack, you would go through a set-up phase where you have to pick the units you want to send into battle and arrange them into a formation. This interaction was inspired by the way the original StarCraft let you load up Dropships and Overlords. With the resources you earned, you could buy more units.
 
         figure
-          iframe.media(
+          iframe.audio(
             width="100%"
             height="100"
             scrolling="no"
@@ -239,7 +239,7 @@ html(lang="en")
             data-src="aa1_logo"
           )
           figcaption.caption.
-            I&rsquo;ve always loved typography, so I also put together a new logo.
+            I love typography, so I took this opportunity to design another logotype.
 
         figure
           .image.js-image(
@@ -254,18 +254,36 @@ html(lang="en")
             data-src="aa1_units"
           )
           figcaption.caption.
-            All new units, in all their vector glory!
+            New vector unit artwork!
 
         p.p.
-          I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I guess it was a pretty neat feature?
+          Trent was delivering artwork faster than I could put it in the game! I had to create new images to represent the different cities in the single-player portion of the game. Unfortunately, I got called for jury duty around this time and, technically being unemployed, I wasn&rsquo;t able to get out of it. So I brought my laptop with me and spent most of my time cobbling together new city images from Trent&rsquo;s art:
 
         figure
           .image.js-image(
             data-src="aa1_cities"
           )
           figcaption.caption.
-            I made most of these &ldquo;City&rdquo; images while waiting to be called for jury duty.
+            I pieced together new City images from existing assets.
 
+        p.p.
+          I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I guess it was a pretty neat feature?
+
+        p.p.
+          There were other cool features I pushed into the game which may not have been worth it. I created an elaborate effects system to allow each unit’s attack to be visually unique. For example, the Medtruck unit would emit an undulating heal ray that would arc out and heal friendly units, while lobbed mortar rounds would be controlled by a simple physics sim to be brought down upon the enemy army. There were also sniper rays, machine gun tracer rounds, and laser beams. See for yourself in this gameplay video:
+
+        figure.videoContainer
+          iframe.video(
+            src="https://player.vimeo.com/video/164033598"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+          )
+          figcaption.caption.
+            Atomic Armies gameplay.
 
     script(
       src="./index.js?v=#{DATE_TIME}"

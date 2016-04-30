@@ -27,7 +27,7 @@ images.forEach(function(image) {
   var type = '.' + ($image.attr('data-type') || 'png');
   var src = "./assets/images/" + $image.attr('data-src') + suffix + type;
 
-  var $linkedImage = $('<a class="imageContainer"></a>');
+  var $linkedImage = $('<a class="imageLink"></a>');
   $linkedImage.attr('href', src);
 
   var $newImage = $('<image class="image" />');

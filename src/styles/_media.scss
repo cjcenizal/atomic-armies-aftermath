@@ -1,0 +1,52 @@
+
+@mixin media {
+  display: block;
+  margin: 36px auto 10px;
+}
+
+/**
+ * Assume all videos on Vimeo are 640x469.
+ */
+.videoContainer {
+  height: 469px;
+}
+
+/**
+ * Dynamically applied by JS to make images into links.
+ */
+.imageLink {
+  display: block;
+}
+
+  .image {
+    height: auto;
+    max-width: 100%;
+
+    @include media;
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      padding: 0 10px;
+    }
+  }
+
+  .audio {
+    @include media;
+  }
+
+  .video {
+    @include media;
+  }
+
+  .caption {
+    font-size: 14px;
+    color: #5C6871;
+    margin: 0 auto;
+    max-width: 600px;
+    margin-bottom: 34px;
+    text-align: center;
+    font-style: italic;
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      padding: 0 30px;
+    }
+  }

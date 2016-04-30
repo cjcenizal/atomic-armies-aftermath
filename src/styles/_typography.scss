@@ -116,40 +116,6 @@ $contentWidth: 700px;
   }
 }
 
-.media {
-  display: block;
-  margin: 36px auto 10px;
-}
-
-.imageContainer {
-  display: block;
-}
-
-.image {
-  display: block;
-  margin: 36px auto 10px;
-  height: auto;
-  max-width: 100%;
-
-  @include whenNarrowerThan($compressedBreakpoint) {
-    padding: 0 10px;
-  }
-}
-
-.caption {
-  font-size: 14px;
-  color: #5C6871;
-  margin: 0 auto;
-  max-width: 600px;
-  margin-bottom: 34px;
-  text-align: center;
-  font-style: italic;
-
-  @include whenNarrowerThan($compressedBreakpoint) {
-    padding: 0 30px;
-  }
-}
-
 .panel {
   max-width: $contentWidth;
   margin: 0 auto;
