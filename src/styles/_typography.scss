@@ -103,6 +103,20 @@ $contentWidth: 700px;
   }
 }
 
+.h3 {
+  font-size: 18px;
+
+  @include contentItem;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    font-size: 16px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 14px;
+  }
+}
+
 .divider {
   text-align: center;
   border: 0;

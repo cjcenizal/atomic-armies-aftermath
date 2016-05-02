@@ -64,4 +64,19 @@ a {
   &:visited {
     color: #109E3C;
   }
+
+  &.heroLink {
+    text-decoration: none;
+    color: #34F570;
+
+    &:active,
+    &:hover,
+    &:visited {
+      color: #34F570;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

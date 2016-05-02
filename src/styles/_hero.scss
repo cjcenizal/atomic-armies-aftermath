@@ -15,7 +15,7 @@
 }
 
   .heroBg {
-    @include storyImage('hero_bg', 1200px, 166px);
+    @include storyImage('hero_bg', 1200px, 166px, 'jpg');
     width: 100%;
     max-width: 1200px;
     background-position: center;
@@ -81,6 +81,8 @@
   max-width: $bodyWidth;
   height: 50px;
   background-color: #080C13;
+  font-size: 18px;
+  color: #C3CCDA;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     height: 35px;

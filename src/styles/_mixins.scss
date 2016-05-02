@@ -44,8 +44,8 @@ $compressedBreakpoint: 508px;
   @include retinaBackground($imagePath, $retinaImagePath, $size);
 }
 
-@mixin storyImage($name, $width, $height) {
-  @include retinaImage("./assets/images/#{$name}.png", "./assets/images/#{$name}_2x.png", $width, $height);
+@mixin storyImage($name, $width, $height, $ext: 'png') {
+  @include retinaImage("./assets/images/#{$name}.#{$ext}", "./assets/images/#{$name}_2x.#{$ext}", $width, $height);
 }
 
 @mixin scrollbar($color: rgba(#454D58, 0.4)) {
