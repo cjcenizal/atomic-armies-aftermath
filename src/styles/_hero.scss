@@ -79,13 +79,17 @@
   position: relative;
   margin: 0 auto;
   max-width: $bodyWidth;
-  height: 50px;
   background-color: #080C13;
-  font-size: 18px;
   color: #C3CCDA;
+  font-size: 18px;
+  padding: 6px;
 
   @include whenNarrowerThan($condensedBreakpoint) {
-    height: 35px;
+    font-size: 16px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    font-size: 14px;
   }
 }
 
