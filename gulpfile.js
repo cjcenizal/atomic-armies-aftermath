@@ -41,6 +41,13 @@ gulp.task('copyAssets', () => {
     .pipe(gulpConnect.reload());
 });
 
+gulp.task('copyGame', () => {
+  return gulp
+    .src(`./node_modules/atomic-armies-demo/dist/**/*`)
+    .pipe(gulp.dest(`${DISTRIBUTION_DIR}/game`))
+    .pipe(gulpConnect.reload());
+});
+
 gulp.task('compileJs', () => {
   return gulp.src([
       './vendor/zepto.min.js',
@@ -105,6 +112,7 @@ gulp.task('compileCss:applyPostCss', () => {
 gulp.task('watch', [
   'serve',
   'copyAssets',
+  'copyGame',
   'compileJs',
   'compileHtml',
   'compileCss',
