@@ -48,7 +48,7 @@ html(lang="en")
 
         p.p.
           If you want to play a single-player demo of the game,
-          <a href="./game" target="_blank">here it is!</a>
+          <a href="./game" target="_blank">here it is!</a> (Hint: you can open the console with the ~ key and type in &ldquo;cheat&rdquo; to quickly level up and get a ton of resources.)
 
         figure
           .image.js-image(
@@ -280,18 +280,22 @@ html(lang="en")
         p.p.
           There were other cool features I pushed into the game which may not have been worth it. I created an elaborate effects system to allow each unit&rsquo;s attack to be visually unique. For example, the Medtruck unit would emit an undulating heal ray that would arc out and heal friendly units, while lobbed mortar rounds would be controlled by a simple physics sim to be brought down upon the enemy army. There were also sniper rays, machine gun tracer rounds, and laser beams. See for yourself in this gameplay video:
 
-        figure.videoContainer
-          iframe.video(
-            src="https://player.vimeo.com/video/164033598"
-            width="100%"
-            height="100%"
-            frameborder="0"
-            webkitallowfullscreen
-            mozallowfullscreen
-            allowfullscreen
-          )
+        figure
+          .videoContainer
+            iframe.video(
+              src="https://player.vimeo.com/video/164033598"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            )
           figcaption.caption.
             Atomic Armies gameplay.
+
+        p.p.
+          My favorite technical aspect of this game was that every battle was completely deterministic. So, given the same army formations for each side, each battle would unfold in exactly the same way. I leveraged this to add a &ldquo;Replay&rdquo; feature, which allowed players to re-watch past battles with very little data stored in the database.
 
         hr.divider
 

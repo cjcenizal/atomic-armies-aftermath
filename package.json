@@ -1,7 +1,7 @@
 {
   "name": "atomic-armies-aftermath",
   "dependencies": {
-    "atomic-armies-demo": "git@github.com:cjcenizal/atomic-armies-demo.git#0.0.2"
+    "atomic-armies-demo": "git@github.com:cjcenizal/atomic-armies-demo.git#0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "6.0.3",
