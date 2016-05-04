@@ -217,9 +217,6 @@ html(lang="en")
           figcaption.caption.
             Seeing this in my inbox made me feel like a kid on Christmas Day.
 
-        p.p.
-          Trent and I worked closely over the next few months. From that point on, he drove the creative vision behind the game and we came to see each other as partners in a joint venture. Now, years later, he&rsquo;s one of my closest friends and we continue to collaborate together on projects.
-
         blockquote.panel
           .panelTitle
             | How to ask for help
@@ -275,7 +272,7 @@ html(lang="en")
             I pieced together new City images from existing assets.
 
         p.p.
-          I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I guess it was a pretty neat feature?
+          I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I thought this was a pretty neat feature at the time.
 
         p.p.
           There were other cool features I pushed into the game which may not have been worth it. I created an elaborate effects system to allow each unit&rsquo;s attack to be visually unique. For example, the Medtruck unit would emit an undulating heal ray that would arc out and heal friendly units, while lobbed mortar rounds would be controlled by a simple physics sim to be brought down upon the enemy army. There were also sniper rays, machine gun tracer rounds, and laser beams. See for yourself in this gameplay video:
@@ -300,7 +297,7 @@ html(lang="en")
         hr.divider
 
         h2.h2.
-          Scale Fail
+          Scale fail
 
         p.p.
           After a month or so, I decided to open the game to the public and start driving traffic to it. I created a number of Facebook ads and targeted psychographics based on people who were playing my competitors&rsquo; games. I managed to get a click-through rate of up to 1.8%. Typical FB ads had a 0.05% CTR, so this was pretty exciting for me.
@@ -314,7 +311,7 @@ html(lang="en")
           li.
             People weren&rsquo;t sharing the game with their friends, probably because I hadn&rsquo;t built in the right social game mechanics to incentivize that kind of behavior.
           li.
-            And worst of all, though some players were actually buying my virtual currency, there weren&rsquo;t very many of them. I think I made around $200 in revenue in a couple months.
+            And worst of all, very few players were buying my virtual currency. In a couple months, my revenue was less than $200.
 
         p.p.
           By February of 2011, it had dawned on me that I had built several fundamental flaws into my game. It played more like a Flash game than a social game, it didn&rsquo;t contain enough content to sustain a single-player experience, and it lacked the social mechanics to sustain a multi-player experience. Based on the messiness of the codebase, I doubted I would able to fix these crippling problems, and the challenge of being a one-man game dev team for 6 months had worn me down. I felt close to quitting. With my back against the wall, I decided to make a last-ditch effort save Atomic Armies before declaring it a failure.
@@ -366,7 +363,7 @@ html(lang="en")
           I remember at one point I directly asked Terence: &ldquo;What do we need to do to get acquired?&rdquo; I&rsquo;m sure it sounded pretty desperate. I don&rsquo;t think he quite knew how to answer that.
 
         h2.h2.
-          The Pivot
+          Pivoting
 
         p.p.
           Around the same time this was going on, I had a heart-to-heart with Trent about what I had done wrong. I had been out of my depth during the development process, and I really wanted to share more creative control with Trent. Out of that conversation came some thoughts on what we could do <em>next</em>, and what to do <em>better.</em> Before I knew it, we were in full-on creative overdrive, riffing on some exciting new ideas for a new version of Atomic Armies.
@@ -399,6 +396,103 @@ html(lang="en")
 
         p.p.
           At the same time, a game on Facebook had caught my eye: Backyard Monsters. This was an isometric war game, in which you built up a base and an army, and used your army to attack your friends&rsquo; bases. And it had attracted a devoted following of players who absolutely loved it. I saw possibilities of marrying these gameplay mechanics with Trent&rsquo;s new creative vision. After talking it over, we decided to go for it.
+
+        h2.h2.
+          Remaking Atomic Armies
+
+        p.p.
+          I mentioned this at the very beginning: if you want to play a single-player demo of the game,
+          <a href="./game" target="_blank">here it is!</a> (Hint: you can open the console with the ~ key and type in &ldquo;cheat&rdquo; to quickly level up and get a ton of resources.)
+
+        p.p.
+          Over the course of six months, we turned Atomic Armies into an isometric war game, like StarCraft for Facebook. A whole slew of new challenges came with this pivot.
+
+        h2.h2.
+          The good parts
+
+        p.p.
+          One of my favorite parts of working on the remake of Atomic Armies was the UI and UX development. I loved fine-tuning things like visual appearance, transitions, animations, and interactive states to make every little micro-interaction as fun as possible.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_full"
+            data-type="gif"
+          )
+          figcaption.caption.
+            I asked Trent to make &ldquo;full&rdquo; Generators look painfully bloated, to make users feel compelled to collect their resources, to give them some relief.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_harvest"
+            data-type="gif"
+          )
+          figcaption.caption.
+            Resource-collection should be an enjoyable activity, so I designed resources to look like candy, and animated them to playfully bounce out onto the ground.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_landing"
+            data-type="gif"
+          )
+          figcaption.caption.
+            When you send troops to attack an enemy base, a delivery pod slams into the ground, causing the ground to shake.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_boom"
+            data-type="gif"
+          )
+          figcaption.caption.
+            I wanted you to feel it in your gut when you destroy a building. So they explode, vomit bouncing resources, and shake the ground.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_walls"
+            data-type="gif"
+          )
+          figcaption.caption.
+            Even an action as mundane as placing walls should be fun and simple, so I used the A* path-finding algorithm to wrap walls around buildings and other obstacles.
+
+        p.p.
+          I also worked motion-based cues into aspects of the UI.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_no"
+            data-type="gif"
+          )
+          figcaption.caption.
+            When you try to perform a disallowed action, you get a feedback tooltip which shakes back and forth, like a person shaking his or head &ldquo;no&rdquo;.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_prompt"
+            data-type="gif"
+          )
+          figcaption.caption.
+            When you start the game, you enter an onboarding tutorial. I made the &ldquo;continue&rdquo; button pulse at intervals, to grab the user&rsquo;s attention and make you want to click.
+
+        figure
+          .image.js-image(
+            data-src="aa2_animation_modal"
+            data-type="gif"
+          )
+          figcaption.caption.
+            I added a staggered animation to the modal transition-in, to make it feel bouncy and bubbly.
+
+        p.p.
+          I even made a custom typeface, called Atomic Alphabet!
+          <a href="./assets/downloads/AtomicAlphabet.otf">Download it and try it out.</a>
+
+        figure
+          .image.js-image(
+            data-src="aa2_alphabet"
+            data-type="jpg"
+          )
+          figcaption.caption.
+            The <a href="./assets/downloads/AtomicAlphabet.otf">Atomic Alphabet<a/> font.
+
+
 
     script(
       src="./index.js?v=#{DATE_TIME}"
