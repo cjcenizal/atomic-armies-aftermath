@@ -59,8 +59,6 @@ html(lang="en")
           figcaption.caption.
             KABOOM!
 
-        hr.divider
-
         h2.h2.
           A rocky start
 
@@ -117,8 +115,6 @@ html(lang="en")
         p.p.
           Fortunately, after a few months of screwing around and wasting my limited amount of money, I learned my lesson. I vowed to save my money and focused on developing my game until it was playable.
 
-        hr.divider
-
         h2.h2.
           The MVP: &ldquo;Armies&rdquo;
 
@@ -156,15 +152,13 @@ html(lang="en")
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/261447261&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"
           )
           figcaption.caption.
-            It even had a custom soundtrack, crafted by sound-genius <a href="http://www.manifestmusicproductions.com/" target="_blank">Adam Berg</a>.
+            Hey it even had its own theme song! Music by sound-genius <a href="http://www.manifestmusicproductions.com/" target="_blank">Adam Berg</a>.
 
         p.p.
           On June 27, 2010, I entered Armies into beta testing on Facebook. My friends helped me out a <strong>lot</strong> here. The trolls among them were the best. They played the most because they kept discovering game imbalance exploits and would use them to harass other players (I&rsquo;m looking at you, Damien, Ben, and Groves). I gathered some great feedback on what was fun and what wasn&rsquo;t.
 
         p.p.
           But as you can tell from the screenshots, the game looked a little rough around the edges. But then, in a pivotal moment in my life, all of that changed.
-
-        hr.divider
 
         h2.h2.
           Trent Kaniuga
@@ -226,8 +220,6 @@ html(lang="en")
             Beyond that, ask nicely. Show respect for the person by showing that you have done your homework and point out why you value you them. Show them how they can help you so they understand what you&rsquo;re asking them for and why. And show that you respect their time by not writing a novel when a few paragraphs will do.
           p.panel__p.
             And be honest. Rep yourself truthfully. If you really are a big shot with a huge budget and a stack of successes to sit on, then share that information. But if you&rsquo;re still in the gutter staring at the stars, be honest about that too.
-
-        hr.divider
 
         h2.h2.
           <em>Atomic</em> Armies
@@ -293,8 +285,6 @@ html(lang="en")
 
         p.p.
           My favorite technical aspect of this game was that every battle was completely deterministic. So, given the same army formations for each side, each battle would unfold in exactly the same way. I leveraged this to add a &ldquo;Replay&rdquo; feature, which allowed players to re-watch past battles with very little data stored in the database.
-
-        hr.divider
 
         h2.h2.
           Scale fail
@@ -400,18 +390,131 @@ html(lang="en")
         h2.h2.
           Remaking Atomic Armies
 
-        p.p.
-          I mentioned this at the very beginning: if you want to play a single-player demo of the game,
-          <a href="./game" target="_blank">here it is!</a> (Hint: you can open the console with the ~ key and type in &ldquo;cheat&rdquo; to quickly level up and get a ton of resources.)
+        figure
+          .image.js-image(
+            data-src="aa2_logo"
+            data-type="jpg"
+          )
+          figcaption.caption.
+            A brand new logo!
 
         p.p.
-          Over the course of six months, we turned Atomic Armies into an isometric war game, like StarCraft for Facebook. A whole slew of new challenges came with this pivot.
+          Over the course of six months, we rebuilt Atomic Armies as an isometric war game. My goal was to make StarCraft for Facebook.
+
+        figure
+          .image.js-image(
+            data-src="aa2_screenshots"
+            data-type="jpg"
+            data-low-res
+          )
+          figcaption.caption.
+            I&rsquo;m really proud of the level of polish our two-person team was able to accomplish.
+
+        figure
+          .image.js-image(
+            data-src="aa2_buildings"
+            data-type="jpg"
+            data-low-res
+          )
+          figcaption.caption.
+            The buildings in the top row made it into the game, but I didn&rsquo;t have time to add the doodads in the bottom row.
+
+        figure
+          .image.js-image(
+            data-src="aa2_alphabet"
+            data-type="jpg"
+          )
+          figcaption.caption.
+            I even made a custom typeface, called Atomic Alphabet!
+            <a href="./assets/downloads/AtomicAlphabet.otf">Download it and try it out.</a>
+
+        p.p.
+          Want to play a single-player demo?
+          <a href="./game" target="_blank"><strong><em>Of course you do!</em></strong></a> Hint: you can open the console with the ~ key and type in &ldquo;cheat&rdquo; to quickly level up and get a ton of resources.
+
+        h2.h2.
+          Challenges
+
+        p.p.
+          A whole slew of new challenges came with this pivot. Early on in this second stage of our project, on April 22, 2011, Trent pointed out our critical challenge:
+
+        blockquote.quote
+          .quoteBody.quoteBody--small.
+            The primary problems that we will face will derive from the complexity of design for a project of this scope. We haven&rsquo;t even gotten to the part where we are actually making a game yet. AND NOT unreasonably btw&hellip; with such limited resources.  Building the assets is only a part of the game development process.  This is kind of why AA 1 was not so fun.  Hardly any time was spent on the design.
+
+        blockquote.quote
+          .quoteBody.quoteBody--small.
+            Normally, a designer would be steering the boat on what unit types, and building values we should be developing.  So we are very much &ldquo;feeling it out&rdquo;, hoping that it comes together later.  But we kind of have to do it that way since we are only 2 people.  This is what I mean when I talk about the scope of the project being too large.  This is another reason why I pushed for a simpler project.
+
+        p.p.
+          Once again, Trent pointed out a more reasonable path forward and once again I didn&rsquo;t get the message. Here were some of the biggest hurdles we encountered:
+
+        h3.h3.
+          We wanted way more content
+
+        p.p.
+          The first version of Atomic Armies had non-animated units, which only faced in one direction. The time around, we were adding buildings into the mix, we were going to animate both the units and the buildings (the units would need walk, attack, and death animations), and the units would need to be portrayed facing in 5 different directions. This created an <strong>enormous</strong> workload for Trent. As fast as he could work, it still took a long time to get all of the art ready. Fortunately (or unfortunately?), I had an equally enormous development task ahead of me.
+
+        figure
+          .image.js-image(
+            data-src="aa2_units"
+            data-type="jpg"
+            data-low-res
+          )
+          figcaption.caption.
+            Each unit required 4x to 10x as much artwork as in the original.
+
+        p.p.
+          All of our animations needed to be stored as spritesheets, so I built a special tool for Trent to use to convert his artwork into game-ready assets. Building and maintaining this tool took time.
+
+        p.p.
+          I also needed to create new bases for the NPCs in the single-player campaign. I needed to create a rapid iteration loop where I could tweak a base and quickly try it out. To do that, I built an app called AtomicEditor which would let me load and save bases as CSV files, which I could then test in the game. This was another tool which took time to build and maintain.
+
+        h3.h3.
+          We needed a lot of new &ldquo;glue&rdquo; systems
+
+        p.p.
+          I needed new systems for the &ldquo;glue&rdquo; of the game: an animation system, a tutorial scripting system, a dialogue scripting system, and resource-production and resource-management systems, to name a few. Fortunately, I was able to apply many of the lessons I had learned from building the glue systems for the first Atomic Armies. Unfortunately, I’ve realized I need to do things wrong two or three times before I finally figure out how to do them right. :)
+
+        figure
+          .image.js-image(
+            data-src="aa2_npcs"
+            data-type="jpg"
+            data-low-res
+          )
+          figcaption.caption.
+            We introduced NPCs that displayed different emotions depending on the in-game dialogue. From top to bottom: The Chief, Red Reject, Slime, Bread Faction, Killbot.
+
+        figure
+          .image.js-image(
+            data-src="aa2_explosions"
+            data-type="jpg"
+            data-low-res
+          )
+          figcaption.caption.
+            Animations like these explosions required their own system.
+
+        p.p.
+        h3.h3.
+          Isometric space introduced a ton of new issues
+
+        p.p.
+          The core shift to an isometric game meant that I had to store the location of all renderable game objects in isometric game-space, and then map their coordinates to screen-space when rendering them. Fortunately, <a href="https://github.com/as3isolib/as3isolib.v1" _target="_blank">As3isolib</a> solved this coordinate-tracking problem for me (and I became friends with its author, Justin Opitz).
+
+        p.p.
+          However, performance was an issue. Walls were composed of individual blocks, and players would need to build a lot of walls. Rendering each of these blocks as layered sprites slowed performance down to a crawl. I solved this problem by rendering each game object to a single bitmap, and then displaying that bitmap each frame. This process is called blitting.
+
+        p.p.
+          But then this created a new problem: hit-testing. With mouse events being dispatched from a single bitmap, how could I tell which game object the cursor was currently interacting with? My solution was to blit a uniquely-colored silhouette of each game object to a separate bitmap.  To correlate mouse position with a unit, I would determine the color of the pixel that the cursor was over, and then use this unique color to identify the corresponding game object. I created an open source library called <a href="https://github.com/cjcenizal/Blis" _target="_blank">Blis (BLitting Isometric System)</a> to handle this logic.
 
         h2.h2.
           The good parts
 
         p.p.
-          One of my favorite parts of working on the remake of Atomic Armies was the UI and UX development. I loved fine-tuning things like visual appearance, transitions, animations, and interactive states to make every little micro-interaction as fun as possible.
+          Some of these challenges were also much easier to overcome than I thought, largely due to the great third-party tools that were available. I learned a lot about the Entity Component System architecture from <a href="http://www.richardlord.net/blog/what-is-an-entity-framework" _target="_blank">Richard Lord&rsquo;s blog</a>, and utilized its concepts with the <a href="https://github.com/PushButtonLabs/PushButtonEngine" _target="_blank">PushButton Engine framework</a> (and I later became friends with its author, <a href="https://bengarney.com/" target="_blank">Ben Garney</a>). We used PlayerIO (eventually sold to <a href="http://gamesplatform.co/" target="_blank">The Game Platform Company</a>) to provide the back-end and handle multiplayer networking (and I later became friends with one of its founders, <a href="http://chrisbenjaminsen.com/" target="_blank">Chris Benjaminsen</a>). And I learned a lot about game programming patterns from the aptly-named <a href="http://gameprogrammingpatterns.com/" target="_blank">Game Programming Patterns book</a> by Robert Nystrom. Incidentally, the design of this book had a huge influence on me in terms of documentation design, which would affect me throughout my later career.
+
+        p.p.
+          One of the best things to come out of this process was that I learned how much I love UI and UX development. I spent way too much time fine-tuning things like visual appearance, transitions, animations, and interactive states to make every little micro-interaction as fun as possible.
 
         figure
           .image.js-image(
@@ -419,7 +522,7 @@ html(lang="en")
             data-type="gif"
           )
           figcaption.caption.
-            I asked Trent to make &ldquo;full&rdquo; Generators look painfully bloated, to make users feel compelled to collect their resources, to give them some relief.
+            I asked Trent to make &ldquo;full&rdquo; Generators look painfully bloated, to make users feel compelled to relieve them of their resources.
 
         figure
           .image.js-image(
@@ -443,7 +546,7 @@ html(lang="en")
             data-type="gif"
           )
           figcaption.caption.
-            I wanted you to feel it in your gut when you destroy a building. So they explode, vomit bouncing resources, and shake the ground.
+            I wanted you to feel it in your gut when you destroyed a building: they explode, shake the ground, and vomit resources.
 
         figure
           .image.js-image(
@@ -479,19 +582,6 @@ html(lang="en")
           )
           figcaption.caption.
             I added a staggered animation to the modal transition-in, to make it feel bouncy and bubbly.
-
-        p.p.
-          I even made a custom typeface, called Atomic Alphabet!
-          <a href="./assets/downloads/AtomicAlphabet.otf">Download it and try it out.</a>
-
-        figure
-          .image.js-image(
-            data-src="aa2_alphabet"
-            data-type="jpg"
-          )
-          figcaption.caption.
-            The <a href="./assets/downloads/AtomicAlphabet.otf">Atomic Alphabet<a/> font.
-
 
 
     script(

@@ -90,16 +90,16 @@ $contentWidth: 700px;
 }
 
 .h2 {
-  font-size: 20px;
+  font-size: 26px;
 
   @include contentItem;
 
   @include whenNarrowerThan($condensedBreakpoint) {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   @include whenNarrowerThan($compressedBreakpoint) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
