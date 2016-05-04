@@ -30,7 +30,10 @@ images.forEach(function(image) {
   var $linkedImage = $('<a class="imageLink"></a>');
   $linkedImage.attr('href', src);
 
-  var $newImage = $('<image class="image" />');
+  var width = $image.attr('data-width');
+  var style = width ? 'max-width:' + width + 'px; width: 100%;' : '';
+
+  var $newImage = $('<image class="image" style="' + style + '"/>');
   $newImage.attr('src', src);
 
   $linkedImage.append($newImage);
