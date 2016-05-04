@@ -387,6 +387,12 @@ html(lang="en")
         p.p.
           At the same time, a game on Facebook had caught my eye: Backyard Monsters. This was an isometric war game, in which you built up a base and an army, and used your army to attack your friends&rsquo; bases. And it had attracted a devoted following of players who absolutely loved it. I saw possibilities of marrying these gameplay mechanics with Trent&rsquo;s new creative vision. After talking it over, we decided to go for it.
 
+        blockquote.panel
+          .panelTitle
+            | How to work with a partner
+          p.panel__p.
+            TODO
+
         h2.h2.
           Remaking Atomic Armies
 
@@ -474,7 +480,7 @@ html(lang="en")
           We needed a lot of new &ldquo;glue&rdquo; systems
 
         p.p.
-          I needed new systems for the &ldquo;glue&rdquo; of the game: an animation system, a tutorial scripting system, a dialogue scripting system, and resource-production and resource-management systems, to name a few. Fortunately, I was able to apply many of the lessons I had learned from building the glue systems for the first Atomic Armies. Unfortunately, I’ve realized I need to do things wrong two or three times before I finally figure out how to do them right. :)
+          I needed new systems for the &ldquo;glue&rdquo; of the game: an animation system, a tutorial scripting system, a dialogue scripting system, and resource-production and resource-management systems, to name a few. Fortunately, I was able to apply many of the lessons I had learned from building the glue systems for the first Atomic Armies. Unfortunately, I&rsquo;ve realized I need to do things wrong two or three times before I finally figure out how to do them right. :)
 
         figure
           .image.js-image(
@@ -520,6 +526,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_full"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             I asked Trent to make &ldquo;full&rdquo; Generators look painfully bloated, to make users feel compelled to relieve them of their resources.
@@ -528,6 +535,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_harvest"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             Resource-collection should be an enjoyable activity, so I designed resources to look like candy, and animated them to playfully bounce out onto the ground.
@@ -536,6 +544,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_landing"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             When you send troops to attack an enemy base, a delivery pod slams into the ground, causing the ground to shake.
@@ -544,6 +553,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_boom"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             I wanted you to feel it in your gut when you destroyed a building: they explode, shake the ground, and vomit resources.
@@ -552,6 +562,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_walls"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             Even an action as mundane as placing walls should be fun and simple, so I used the A* path-finding algorithm to wrap walls around buildings and other obstacles.
@@ -563,6 +574,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_no"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             When you try to perform a disallowed action, you get a feedback tooltip which shakes back and forth, like a person shaking his or head &ldquo;no&rdquo;.
@@ -571,6 +583,7 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_prompt"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             When you start the game, you enter an onboarding tutorial. I made the &ldquo;continue&rdquo; button pulse at intervals, to grab the user&rsquo;s attention and make you want to click.
@@ -579,9 +592,59 @@ html(lang="en")
           .image.js-image(
             data-src="aa2_animation_modal"
             data-type="gif"
+            data-low-res
           )
           figcaption.caption.
             I added a staggered animation to the modal transition-in, to make it feel bouncy and bubbly.
+
+        h2.h2.
+          Game over
+
+        p.p.
+          On October 18, 2011, we launched the new and improved Atomic Armies. The only problem was, after pouring a ton of effort into it, it seemed like the end still wasn&rsquo;t in sight. We were missing tons of content and features, we hadn&rsquo;t spent any time developing the game mechanics, let alone the social mechanics, and there were plenty of bugs to fix. Not only did the game still need a lot of work, the codebase was messy and too unwieldy for me to get the work done in a reasonable timeframe.
+
+        p.p.
+          I made a <a href="./assets/downloads/atomic_armies_design_doc.pdf" target="_blank">design doc</a> to capture our vision for the game. I thought it was a fantastic vision, but I didn&rsquo;t think we could deliver on it.
+
+        figure
+          .image.js-image(
+            data-src="aa2_design_doc"
+            data-type="jpg"
+          )
+          figcaption.caption.
+            <a href="./assets/downloads/atomic_armies_design_doc.pdf" target="_blank">Atomic Armies design doc.</a>
+
+        p.p.
+          Life was also starting to get real. I had been eating Subway pretty much every day and my health was suffering. I was planning on proposing to Karla and my savings were dwindling. I took stock of my current situation. I had spent a year and a half learning about things that now seemed worthless:
+
+        ul.list
+          li.
+            I had thrown myself into game development, which is a notoriously difficult industry in which to make money.
+          li.
+            I had committed to succeeding in the social games industry, which was now dying as everybody fled web-based gaming to play games on their phones.
+          li.
+            And of all things, I had chosen to do all of this in Flash and AS3. Which, as Steve Jobs had famously proclaimed, was dead. Supplanted by native languages and HTML5.
+
+        p.p.
+          There was very little demand for the skills and knowledge I had worked so hard for. I felt sick. What was I doing with my life? What the hell could I do next? I suddenly wasn&rsquo;t sure and it scared the shit out of me.
+
+        p.p.
+          I needed to decide on a career path, so I could pay for a wedding, a house, supporting a family, and the rest of the things that come with the life I wanted. I interviewed at several social games companies and found them all incredibly depressing. I decided I didn&rsquo;t want to work in games.
+
+        p.p.
+          Instead, I wanted to build products people could use and enjoy, and I wanted to work on the UI/UX side of things. Over the course of the next four years, I built up a successful career as a UI Engineer and now I&rsquo;m very happy. Karla and I are happily married. Trent attended our wedding. We&rsquo;re good friends today and we still collaborate on projects together. Everything worked out in the end.
+
+        blockquote.panel
+          .panelTitle
+            | How to switch careers
+          p.panel__p.
+            TODO
+
+        h2.h2.
+          Lessons learned
+
+        p.p.
+          I think it&rsquo;s pretty awesome how much Trent and I did, and how genuinely great Atomic Armies could have been, if it had the right resources and experience behind it. I think I read the market right in many ways. Games were definitely ready to get more &ldquo;hardcore&rdquo;. But I don&rsquo;t think reading a market right matters&hellip; clearly, execution is what matters, and I was completely unprepared for what solid execution demanded of me.
 
 
     script(
