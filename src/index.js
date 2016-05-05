@@ -26,9 +26,10 @@ images.forEach(function(image) {
   var suffix = (isRetina && !lowRes) ? '_2x' : '';
   var type = '.' + ($image.attr('data-type') || 'png');
   var src = "./assets/images/" + $image.attr('data-src') + suffix + type;
+  var link = $image.attr('data-link');
 
-  var $linkedImage = $('<a class="imageLink"></a>');
-  $linkedImage.attr('href', src);
+  var $linkedImage = $('<a class="imageLink" target="_blank"></a>');
+  $linkedImage.attr('href', link || src);
 
   var width = $image.attr('data-width');
   var style = width ? 'max-width:' + width + 'px; width: 100%;' : '';
