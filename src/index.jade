@@ -39,621 +39,666 @@ html(lang="en")
         <span>A game-dev post-mortem &mdash; <a class="heroLink" href="http://www.cenizal.com" target="_blank">by CJ Cenizal</a></span>
 
       .bodyContent
+        .bodyContent__inner
 
-        p.p.p--intro.
-          This is the story of how I spent two years as an indie game dev. I made a couple of games, a ton of mistakes, almost no money, and learned a hell of a lot about game-making, entrepreneurship, and myself. It was the craziest adventure of my life.
+          p.p.p--intro.
+            This is the story of how I spent two years as an indie game dev, which culminated in a game called Atomic Armies (<a href="./game" target="_blank">play the demo here</a>). During these two years I made a couple other games, a ton of mistakes, almost no money, and learned a hell of a lot about game-making, entrepreneurship, and myself. It was the craziest adventure of my life.
 
-        figure
-          .image.js-image(
-            data-src="aa2_gameplay_example"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            This is Atomic Armies, one of the games I made. <strong><a href="./game" target="_blank">Play the single-player demo.</a></strong>
-
-        h2.h2.
-          I had no clue what I was doing
-
-        p.p.
-          My story begins in April of 2010. I was 26 years old, I was in a serious relationship with a girl named Karla, and I was starting to burn out at the tail-end of a successful visual effects career. This career consisted of churning out renders of particle systems and simple physics simulations, which were then composited into commercials to be broadcast on TV. I would work on contract for a few months at a time, take a break for a week or two, and then repeat the cycle. I loved the work when I first started. After a few years of the same thing over and over, I wanted out.
-
-        p.p.
-          At the time, Mafia Wars had just put Zynga on the map, dazzling tech journalists, entrepreneurs, and VCs with the magic of social gaming. &ldquo;Social&rdquo; was the buzzword of the day (later, &ldquo;mobile&rdquo; and &ldquo;local&rdquo; would usurp the throne). I decided this was my opportunity to quit my day job to fame, glory, and riches. I gave notice and I was on my way.
-
-        blockquote.panel
-          .panelTitle
-            | How I knew I had to quit my job
-          p.panel__p.
-            I think if you feel like you&rsquo;re getting less out of your job than you&rsquo;re putting in, then it&rsquo;s a good time to leave. And this is especially true when you&rsquo;re young and have fewer responsibilities, because that&rsquo;s the best time you can take risks and recover from failure.
-          p.panel__p.
-            In terms of my job, I had become really good at writing one-off programs that generated interesting visual effects, but I felt like I had hit a plateau. I wasn&rsquo;t learning anything new and I felt like I was wasting my time.
-          p.panel__p.
-            In terms of risk, I knew I wanted to marry Karla, and down that road lay responsibilities like car loans, a mortgage, and kids. Women have the best chance at a healthy pregnancy before 35, so I had a pretty hard window in which I could attempt my reach goals before I had to get serious about being a grown-up.
-
-        p.p.
-          It&rsquo;s embarrassing to admit how clueless I was. Game dev consists of making games and then making money with them. Instead, I did everything else:
-
-        ul.list
-          li
-            | I thought I needed to establish a formal business. So I created a company called Elevated Games, registered an LLC in Delaware with LegalZoom, opened up a business checking around with Chase, designed a company logo and website, and printed up a ton of business cards, most of which I ended up throwing away.
-            figure
-              .image.js-image(
-                data-src="elevated_games_card"
-                data-type="jpg"
-                data-width="905"
-              )
-              figcaption.caption.
-                I would have preferred the title, &ldquo;Creative Dictator&rdquo;.
-          li.
-            I thought I needed a business plan, so I paid someone $5,000 to <a href="./assets/downloads/elevated_games_business_plan.pdf" target="_blank">write one up</a>. It contained a SWOT analysis and a bunch of other stuff which didn&rsquo;t have any effect except reduce the balance in that Chase business checking account.
-          li.
-            I thought I needed a scalable infrastructure, and I had read something about sharding online. It seemed important, so I hired a software engineer from Google to set up some servers for me and build a deployment system. Classic case of over-engineering.
-          li.
-            At the time, doing development &ldquo;right&rdquo; meant doing Scrum. So I read up on story points and burndown charts and sprints, and once I finally got around to development I did a one-man variant of Scrum. Here&rsquo;s a snapshot of my <a href="./assets/product_backlog/index.html" target="_blank">product backlog</a>, which I made with Google Spreadsheets.
-
-        p.p.
-          When I think back on these mistakes, I like to remind myself that mistakes are learning experiences, and the important thing is to avoid making the same mistake twice.
-          Fortunately, after a few months of screwing around and wasting my limited amount of money, I learned my lesson. I vowed to save my money and focused on developing my first game.
-
-        blockquote.panel
-          .panelTitle
-            | I should have cut out the bullshit
-          p.panel__p.
-            If I could do one thing differently, I would have said &ldquo;no&rdquo; to more things.
-          p.panel__p.
-            I would have defined an MVP as my goal. Some low-hanging fruit. Then I would have plotted out the shortest course to plucking it. Instead of a goal of &ldquo;making a million dollars with a social game.&rdquo;, I should have gone for &ldquo;making a fun single-player game.&rdquo; This goal is specific and clear, and would have resulted in a smaller, better-defined scope.
-          p.panel__p.
-            To form a plan, I should have asked myself, &ldquo;What&rsquo;s stopping me from accomplishing that today?&rdquo; I would have ended up with a to-do list that would have inevitably to accomplishing my goal. And I bet creating an LLC and writing a business plan wouldn&rsquo;t have been on it.
-
-        h2.h2.
-          I made my first game: &ldquo;Armies&rdquo;
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            The game takes place after a nuclear war, and civilization has been wiped out. You emerge from your bunker and have to reclaim decimated cities, build your tech tree and army, and work with your friends to battle and defeat other players for resources.
-
-        p.p.
-          This was the idea behind my first game, which I called &ldquo;Armies&rdquo;. The basic idea of the game was simple. There&rsquo;s a battlefield with enemy units on the right side. You put your units on the left side. The two sides meet in the middle and battle ensues! It was essentially a multiplayer version of a Flash game I liked, called
-          <a href="http://armorgames.com/play/4264/colony" target="_blank">Colony</a>.
-
-        p.p.
-          Armies had a single-player portion allowed you to attack cities, which would earn you a slow, steady stream of resources once conquered. It was inspired by Farmville&rsquo;s core game loop, but with war instead of farming. You could also wage war against your friends which, besides being more fun, would also earn you more resources. When you launched an attack, you would go through a set-up phase where you have to pick the units you want to send into battle and arrange them into a formation. This interaction was inspired by the way the original StarCraft let you load up Dropships and Overlords. With the resources you earned, you could buy more units.
-
-        figure
-          .image.js-image(
-            data-src="aa0_gameplay"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Armies wasn&rsquo;t the prettiest belle at the ball, but it was playable.
-
-        figure
-          iframe.audio(
-            width="100%"
-            height="100"
-            scrolling="no"
-            frameborder="no"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/261447261&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"
-          )
-          figcaption.caption.
-            But it did have its own theme song! Music by sound-genius <a href="http://www.manifestmusicproductions.com/" target="_blank">Adam Berg</a>.
-
-        p.p.
-          On June 27, 2010, I entered Armies into beta testing on Facebook. My friends helped me out a <strong>lot</strong> here. The trolls among them were the best. They played the most because they kept discovering game imbalance exploits and would use them to harass other players (I&rsquo;m looking at you, Damien, Ben, and Groves). I gathered some great feedback on what was fun and what wasn&rsquo;t.
-
-        h2.h2.
-          I met Trent Kaniuga, the God of Game Art
-
-        p.p.
-          On July 25, 2010, I found <a href="http://41.media.tumblr.com/tumblr_lfsjvmX8df1qd9jlto1_500.jpg" target=_"blank">this painting of a Marine battling Hydralisks</a> on DeviantArt. It was painted by a Blizzard concept artist named Trent Kaniuga. This guy was a god. I decided to reach out and see if he would be interested in working with me on Armies. Here are a couple snippets from my email:
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            So maybe you&rsquo;ve already heard pitches like this from other people who were dreamers and had ideas they couldn&rsquo;t pull off.  My only difference from them is that I&rsquo;m taking Armies to completion and, if all goes well, profitability.  So my question for you is: do you want to do a little work on what&rsquo;s going to be the funnest, most badass, ground-breaking social game yet made?  For uh, cheap?  I would absolutely love to have your help.
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            So, if you ARE down to help out, you&rsquo;d really be the coolest guy I know.  Which is quite a laudable distinction and totally worth doing work for next-to-nothing for me.  Oh, and besides an insultingly low amount in payment, I can also offer you my help doing the Flash programming of your next portfolio site.  And who could say no that&hellip;?
-
-        p.p.
-          And, what do you know? It worked. Trent, you big softie! Here are a few snippets of his reply:
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            At first glance, I can see a great deal of potential in your future as a game dev. You&rsquo;ve got a great attitude, and are very personable in your communications, as well as passionate about what you are creating.  It takes a unique kind of personality to balance the artist, the programmer and the businessman, while also having good social skills.  
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            In my opinion, [Armies] needs a complete visual overhaul.  You need a distinct visual style that sets it apart from other games of its type. It needs to have a bit more flare, and polish.  To do this, I&rsquo;d want to have all new character images, and possibly 2-3 frame animations for each plus new background tiles.  Menu and interface needs a slick new touch, perhaps with animations as you mouse over them. Also, you&rsquo;ll need more interesting names for your unit types. You&rsquo;re going to need a strong logo, and a better title. 
-
-        p.p.
-          This is known as the &ldquo;sandwich method&rdquo; of giving feedback. First you say something nice. Then you give the hard criticism in the middle. And then you end it with something nice again:
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-             I&rsquo;d be interested in working with you on your next project. Sort of a&hellip; testing period. I&rsquo;d like to put together something quick, and fun. Maybe a puzzle game, or something that can be made within 3 months of our free time. Polish it, test the hell out of it, balance it, and release it. 
-
-        p.p.
-          Remember what I said earlier about cutting out the bullshit? Trent already knew how to do that. As an industry veteran and a life-long creative, he had a ton of experience working on video games and building stuff.
-
-        p.p.
-          But I didn&rsquo;t listen to him! I pushed back, and Trent agreed to provide the art for Armies for a price point that worked for both of us. Two weeks after I emailed him, he sent me his first sketch. It was gorgeous. No matter how bad the game itself was, at least I knew Armies was going to look beautiful.
-
-        figure
-          .image.js-image(
-            data-src="aa1_sketches"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            WOWZA!
-
-        blockquote.panel
-          .panelTitle
-            | How to ask for help
-          p.panel__p.
-            The hardest part about asking for help is simply doing it. It&rsquo;s like how 90% of a job is simply showing up. If you want someone&rsquo;s help, just <em>ask</em>.
-          p.panel__p.
-            Beyond that, ask nicely. Show respect for the person by showing that you have done your homework and point out why you value you them. Show them how they can help you so they understand what you&rsquo;re asking them for and why. And show that you respect their time by not writing a novel when a few paragraphs will do.
-          p.panel__p.
-            And be honest. Rep yourself truthfully. If you really are a big shot with a huge budget and a stack of successes to sit on, then share that information. But if you&rsquo;re still in the gutter staring at the stars, be honest about that too.
-
-        h2.h2.
-          We improved the game and renamed it &ldquo;<em>Atomic</em> Armies&rdquo;
-
-        p.p.
-          For the next three months, I worked on the gameplay, polished the UI, added new social game mechanics and other features, and Trent delivered the artwork. On November 15, 2010, we launched the new, Trent-infused &ldquo;Atomic Armies&rdquo;. I had added a couple features like a step-by-step onboarding walk-through, an XP-based leveling system, a data visualization of past wins and losses, and you could use virtual currency to buy in-game resources and XP. Trent&rsquo;s artwork really stood out.
-
-        figure
-          .image.js-image(
-            data-src="aa1_gameplay"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            The game was more fun, it looked cool, and Trent&rsquo;s art was stellar.
-
-        figure
-          .videoContainer
-            iframe.video(
-              src="https://player.vimeo.com/video/164033598"
-              width="100%"
-              height="100%"
-              frameborder="0"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowfullscreen
+          figure
+            .image.js-image(
+              data-src="aa2_gameplay_example"
+              data-type="jpg"
+              data-low-res
+              data-link="./game"
             )
-          figcaption.caption.
-            Atomic Armies gameplay.
-
-        figure
-          .image.js-image(
-            data-src="aa1_units"
-            data-type="jpg"
-            data-width="1206"
-          )
-          figcaption.caption.
-            Trent painted all these units in vector.
-
-        figure
-          .image.js-image(
-            data-src="aa1_logo"
-            data-type="jpg"
-            data-width="1005"
-          )
-          figcaption.caption.
-            I love typography, so I designed this logotype.
-
-        figure
-          .image.js-image(
-            data-src="aa1_cities"
-            data-type="jpg"
-            data-width="1397"
-          )
-          figcaption.caption.
-            I pieced together these new City images from Trent&rsquo;s assets.
-
-        p.p.
-          During development, I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I thought this was a pretty neat feature at the time.
-
-        p.p.
-          There were other cool features I pushed into the game which may not have been worth it. I created an elaborate effects system to allow each unit&rsquo;s attack to be visually unique. For example, the Medtruck unit would emit an undulating heal ray that would arc out and heal friendly units, while lobbed mortar rounds would be controlled by a simple physics sim to be brought down upon the enemy army. There were also sniper rays, machine gun tracer rounds, and laser beams.
-
-        p.p.
-          My favorite technical aspect of this game was that every battle was completely deterministic. So, given the same army formations for each side, each battle would unfold in exactly the same way. I leveraged this to add a &ldquo;Replay&rdquo; feature, which allowed players to re-watch past battles with very little data stored in the database.
-
-        h2.h2.
-          The game sucked, so we had to kill it
-
-        p.p.
-          In late December of 2010, I decided to open the game to the public and start driving traffic to it. I created Facebook ads targeting people who played my competitors&rsquo; games. The best ones got a click-through rate of 1.8%; much better than the typical 0.05% CTR for an ad on Facebook. I remember being very proud of this.
-
-        p.p.
-          Driving traffic to the game was only one step. I had three critical KPIs: stickiness (a measure of how often players returned to the game), virality (a measure of how many players recruited their friends to play), and monetization. By January of 2011, none of these numbers were very good.
-
-        ul.list
-          li.
-            People would play the game like crazy for a few days, and then stop playing entirely.
-          li.
-            People weren&rsquo;t sharing the game with their friends, probably because I hadn&rsquo;t built in the right social game mechanics to incentivize that kind of behavior.
-          li.
-            And worst of all, very few players were buying my virtual currency. In a couple months, my revenue was less than $200.
-
-        p.p.
-          By February of 2011, it had dawned on me that I had built several fundamental flaws into my game. It played more like a Flash game than a social game, it didn&rsquo;t contain enough content to sustain a single-player experience, and it lacked the social mechanics to sustain a multi-player experience. Based on the messiness of the codebase, I doubted I would able to fix these crippling problems, and the challenge of being a one-man game dev team for 6 months had worn me down. I felt close to quitting. With my back against the wall, I decided to make a last-ditch effort save Atomic Armies before declaring it a failure.
-
-        h3.h3.
-          I tried to find a partnership
-
-        p.p.
-          I submitted the game to 6waves, a large social and mobile games publisher. If I could get their marketing power behind the game, I could pull more players in and increase revenue. Unfortunately, they saw the same flaws in the game that I did and decided to pass.
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            &ldquo;[The review board] liked the art style and audio, but the main challenges were the economy of the game and user retention based on the existing features.  More specifically, the feedback was that there's not enough for people to purchase, the game is balanced such that users run out of coins too easily and there aren't enough motivations for users to come back to the game.&rdquo;
-          .quoteFooter.
-            &mdash; 6waves&rsquo;s rejection email
-
-        h3.h3.
-          I looked for investors
-
-        p.p.
-          I thought there was a chance I could fix Atomic Armies&rsquo;s problems if I had more developers, but I needed money to pay them. So I asked Trent for his permission to portray him as our offical Art Director and I put together a
-          <a href="https://www.slideshare.net/secret/urQbIdrJ8630CS" target="_blank">pitch deck</a> to shop around with angels like Paige Craig and Tech Coast Angels. While I think I did a good job with the deck, it wasn&rsquo;t enough to hide the problems with Atomic Armies, and I found no takers.
-
-        figure
-          .image.js-image(
-            data-src="aa1_pitch_slide"
-            data-type="jpg"
-            data-width="630"
-            data-link="https://www.slideshare.net/secret/urQbIdrJ8630CS"
-          )
-          figcaption.caption.
-            The opening slide from our <a href="https://www.slideshare.net/secret/urQbIdrJ8630CS" target="_blank">pitch deck</a>.
-
-        h3.h3.
-          I tried to get acquired
-
-        p.p.
-          So I thought, &ldquo;Well, if nobody wants to invest, maybe somebody will buy?&rdquo; In March, I went to SF and met with Zynga&rsquo;s Head of Corporate Development, Terence Fung, to see if Zynga would be interested in purchasing Atomic Armies. While I had a great visit with Terence, it was clear that an acquisition was not a possibility. I remember at one point I directly asked Terence: &ldquo;What do we need to do to get acquired?&rdquo; I don&rsquo;t think he quite knew how to answer that. There really was no compelling reason for anyone to purchase a game like Atomic Armies or a company like Elevated Games.
-
-        blockquote.panel
-          .panelTitle
-            | I should have planned around my goals
-          p.panel__p.
-            I found myself in such a bad spot because I had failed to plan ahead. Instead of rushing headlong into making the game, I should have defined success and then worked backwards to clearly define the steps I would have had to take to succeed.
-          p.panel__p.
-            I would have defined success as: &ldquo;Becoming a millionaire.&rdquo; To get there, I would have needed lots of people playing my game. I would have had to make the game incredibly viral to get the number of players I needed. That level of virality would have required strong social mechanics. Building these kinds of social mechanics would have required a robust metrics system and a clean, maintainable codebase for fast iteration.
-          p.panel__p.
-            If I had had this plan, I would have been focused on the important things, not features that I just thought were cool. I also would have been able to track how closely I was following the plan, and I probably would have anticipated failure much earlier and been able to do something about it.
-
-        h2.h2.
-          We pivoted with new game mechanics and a new look
-
-        p.p.
-          In that same month, February of 2011, I had a heart-to-heart with Trent about what I had done wrong. I had been out of my depth during the development process, and I really wanted to share more creative control with Trent. Out of that conversation came some thoughts on what we could do <em>next</em>, and what to do <em>better.</em> Before I knew it, we were in full-on creative overdrive, riffing on some exciting new ideas for a new version of Atomic Armies.
-
-        p.p.
-          Trent wanted to take the game in a more story-oriented and visual direction. He whipped up some storyboards to communicatye his ideas. They were awesome! On February 23, 2011, I used his assets to create a rough prototype where you could place bunkers and marines on an isometric surface, and watch them shoot each other. While I was in SF, I demoed this prototype for a room full of programmers at a local meetup, and they loved it! Suddenly, I felt hope.
-
-        p.p.
-          A game on Facebook caught my eye: Backyard Monsters. This was an isometric war game, in which you built up a base and an army, and used your army to attack your friends&rsquo; bases. And it had attracted a devoted following of players who absolutely loved it. I saw possibilities of marrying these gameplay mechanics with Trent&rsquo;s new creative vision. After talking it over, we decided to go for it.
-
-        figure
-          .image.js-image(
-            data-src="aa2_sketch_storyboards"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Trent&rsquo;s awesome storyboards gave me new energy.
-
-        figure
-          .image.js-image(
-            data-src="aa2_sketch_buildings"
-            data-type="jpg"
-            data-width="942"
-          )
-          figcaption.caption.
-            I made a prototype with these initial assets, and it was immediately more fun than the original Atomic Armies.
-
-        blockquote.panel
-          .panelTitle
-            | The more trust you put into a partnership, the more you get out
-          p.panel__p.
-            It took time for Trent and I to figure each other out. We needed to learn each others&rsquo; strengths and weaknesses, and earn each others&rsquo; trust. This meant that I was initially very cautious with Trent, and relucant to give him too much responsibilitiy.
-          p.panel__p.
-            In retrospect, I wish I had shared creative ownership with him sooner. I think creative individuals do their best work when they have creative control. If we had established a work relationship based on shared ownership earlier in our relationship, then I think we could have produced better work, more quickly.
-          p.panel__p.
-            A partnership is also about using each others&rsquo;s strengths to protect against your own weaknesses. In a complementary partnership, you&rsquo;re less likely to make stupid decisions because you have multiple viewpoints on a situation and you&rsquo;ll be compelled to compromise with one another.
-
-        h2.h2.
-          We made a whole new Atomic Armies
-
-        p.p.
-          I wanted to make StarCraft for Facebook. We spent eight months rebuilding Atomic Armies as an isometric war game.  Want to play a single-player demo?
-          <a href="./game" target="_blank"><strong><em>Of course you do!</em></strong></a>
-
-        figure
-          .image.js-image(
-            data-src="aa2_screenshots"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            I&rsquo;m really proud of the level of polish our two-person team was able to accomplish.
-
-        figure
-          .image.js-image(
-            data-src="aa2_buildings"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            The buildings in the top row made it into the game, but I didn&rsquo;t have time to add the doodads in the bottom row.
-
-        figure
-          .image.js-image(
-            data-src="aa2_logo"
-            data-type="jpg"
-            data-width="885"
-          )
-          figcaption.caption.
-            I designed a new logo.
-
-        figure
-          .image.js-image(
-            data-src="aa2_alphabet"
-            data-type="jpg"
-            data-width="672"
-            data-link="./assets/downloads/AtomicAlphabet.otf"
-          )
-          figcaption.caption.
-            I also made this custom typeface, Atomic Alphabet.
-            You can <a href="./assets/downloads/AtomicAlphabet.otf">install the font file</a> and use it in your TPS reports.
-
-        h2.h2.
-          We bit off way more than we could chew
-
-        p.p.
-          A whole slew of new challenges came with this pivot. Early on in this second stage of our project, on April 22, 2011, Trent pointed out our critical challenge:
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            The primary problems that we will face will derive from the complexity of design for a project of this scope. We haven&rsquo;t even gotten to the part where we are actually making a game yet. AND NOT unreasonably btw&hellip; with such limited resources.  Building the assets is only a part of the game development process.  This is kind of why AA 1 was not so fun.  Hardly any time was spent on the design.
-
-        blockquote.quote
-          .quoteBody.quoteBody--small.
-            Normally, a designer would be steering the boat on what unit types, and building values we should be developing.  So we are very much &ldquo;feeling it out&rdquo;, hoping that it comes together later.  But we kind of have to do it that way since we are only 2 people.  This is what I mean when I talk about the scope of the project being too large.  This is another reason why I pushed for a simpler project.
-
-        p.p.
-          Trent had a knack for pointing out core problems with our goals and suggesting reasonable solutions. I had an equal talent for not getting the message. Here were some of the biggest hurdles we encountered:
-
-        h3.h3.
-          We wanted way more content
-
-        p.p.
-          The first version of Atomic Armies had non-animated units, which only faced in one direction. The time around, we were adding buildings into the mix, we were going to animate both the units and the buildings (the units would need walk, attack, and death animations), and the units would need to be portrayed facing in 5 different directions. This created an <strong>enormous</strong> workload for Trent. As fast as he could work, it still took a long time to get all of the art ready. Fortunately (or unfortunately?), I had an equally enormous development task ahead of me.
-
-        figure
-          .image.js-image(
-            data-src="aa2_units"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Each unit required 4x to 10x as much artwork as in the original.
-
-        p.p.
-          All of our animations needed to be stored as spritesheets, so I built a special tool for Trent to use to convert his artwork into game-ready assets. Building and maintaining this tool took time.
-
-        p.p.
-          I also needed to create new bases for the NPCs in the single-player campaign. I needed to create a rapid iteration loop where I could tweak a base and quickly try it out. To do that, I built an app called AtomicEditor which would let me load and save bases as CSV files, which I could then test in the game. This was another tool which took time to build and maintain.
-
-        h3.h3.
-          We needed a lot of new &ldquo;glue&rdquo; systems
-
-        p.p.
-          I needed new systems for the &ldquo;glue&rdquo; of the game: an animation system, a tutorial scripting system, a dialogue scripting system, and resource-production and resource-management systems, to name a few. Fortunately, I was able to apply many of the lessons I had learned from building the glue systems for the first Atomic Armies. Unfortunately, I&rsquo;ve realized I need to do things wrong two or three times before I finally figure out how to do them right. :)
-
-        figure
-          .image.js-image(
-            data-src="aa2_npcs"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            We introduced NPCs that displayed different emotions depending on the in-game dialogue. From top to bottom: The Chief, Red Reject, Slime, Bread Faction, Killbot.
-
-        figure
-          .image.js-image(
-            data-src="aa2_explosions"
-            data-type="jpg"
-            data-low-res
-          )
-          figcaption.caption.
-            Animations like these explosions required their own system.
-
-        p.p.
-        h3.h3.
-          Isometric space introduced a ton of new issues
-
-        p.p.
-          The core shift to an isometric game meant that I had to store the location of all renderable game objects in isometric game-space, and then map their coordinates to screen-space when rendering them. Fortunately, <a href="https://github.com/as3isolib/as3isolib.v1" _target="_blank">As3isolib</a> solved this coordinate-tracking problem for me (and I became friends with its author, Justin Opitz).
-
-        p.p.
-          However, performance was an issue. Walls were composed of individual blocks, and players would need to build a lot of walls. Rendering each of these blocks as layered sprites slowed performance down to a crawl. I solved this problem by rendering each game object to a single bitmap, and then displaying that bitmap each frame. This process is called blitting.
-
-        p.p.
-          But then this created a new problem: hit-testing. With mouse events being dispatched from a single bitmap, how could I tell which game object the cursor was currently interacting with? My solution was to blit a uniquely-colored silhouette of each game object to a separate bitmap.  To correlate mouse position with a unit, I would determine the color of the pixel that the cursor was over, and then use this unique color to identify the corresponding game object. I created an open source library called <a href="https://github.com/cjcenizal/Blis" _target="_blank">Blis (BLitting Isometric System)</a> to handle this logic.
-
-        h2.h2.
-          Despite the challenges, there were good parts
-
-        p.p.
-          Some of these challenges were also much easier to overcome than I thought, largely due to the great third-party tools that were available. I learned a lot about the Entity Component System architecture from <a href="http://www.richardlord.net/blog/what-is-an-entity-framework" _target="_blank">Richard Lord&rsquo;s blog</a>, and utilized its concepts with the <a href="https://github.com/PushButtonLabs/PushButtonEngine" _target="_blank">PushButton Engine framework</a> (and I later became friends with its author, <a href="https://bengarney.com/" target="_blank">Ben Garney</a>). We used PlayerIO (eventually sold to <a href="http://gamesplatform.co/" target="_blank">The Game Platform Company</a>) to provide the back-end and handle multiplayer networking (and I later became friends with one of its founders, <a href="http://chrisbenjaminsen.com/" target="_blank">Chris Benjaminsen</a>). And I learned a lot about game programming patterns from the aptly-named <a href="http://gameprogrammingpatterns.com/" target="_blank">Game Programming Patterns book</a> by Robert Nystrom. Incidentally, the design of this book had a huge influence on me in terms of documentation design, which would affect me throughout my later career.
-
-        p.p.
-          One of the best things to come out of this process was that I learned how much I love UI and UX development. I spent way too much time fine-tuning things like visual appearance, transitions, animations, and interactive states to make every little micro-interaction as fun as possible.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_full"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            I asked Trent to make &ldquo;full&rdquo; Generators look painfully bloated, to make users feel compelled to relieve them of their resources.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_harvest"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            Resource-collection should be an enjoyable activity, so I designed resources to look like candy, and animated them to playfully bounce out onto the ground.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_landing"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            When you send troops to attack an enemy base, a delivery pod slams into the ground, causing the ground to shake.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_boom"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            I wanted you to feel it in your gut when you destroyed a building: they explode, shake the ground, and vomit resources.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_walls"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            Even an action as mundane as placing walls should be fun and simple, so I used the A* path-finding algorithm to wrap walls around buildings and other obstacles.
-
-        p.p.
-          I also worked motion-based cues into aspects of the UI.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_no"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            When you try to perform a disallowed action, you get a feedback tooltip which shakes back and forth, like a person shaking his or head &ldquo;no&rdquo;.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_prompt"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            When you start the game, you enter an onboarding tutorial. I made the &ldquo;continue&rdquo; button pulse at intervals, to grab the user&rsquo;s attention and make you want to click.
-
-        figure
-          .image.js-image(
-            data-src="aa2_animation_modal"
-            data-type="gif"
-            data-low-res
-          )
-          figcaption.caption.
-            I added a staggered animation to the modal transition-in, to make it feel bouncy and bubbly.
-
-        h2.h2.
-          We launched the game in a half-formed state
-
-        p.p.
-          On October 18, 2011, eight months of work, we launched the new and improved Atomic Armies! A week later, I made a <a href="./assets/downloads/atomic_armies_design_doc.pdf" target="_blank">design doc</a> to capture our vision for the game and outline where we were going to take the game over the course of the next few months.
-
-        p.p.
-          Seeing the future in clearer detail also made it apparent that we still had a lot of work to do. The game we had launched was only partially complete. We were missing tons of content and features, we hadn&rsquo;t spent any time developing the game mechanics, let alone the social mechanics, and there were plenty of bugs to fix. But based on how much time it had taken to get this point, and how much farther we needed to go, it seemed like the game was going to demand a <strong>lot</strong> of time. Possibly more time than either Trent or I had.
-
-        p.p.
-          Not only did the game still need a lot of work, but I had come to realize the codebase was messy and too unwieldy for me to get work done quickly or easily. I had written myself into a corner: the game was in a playable state, but not an iterable state. I started to re-architect it, but the enormity of the task at hand was daunting. And every day I spent refactoring and re-architecting was a day not spend on adding sorely-needed features.
-
-        p.p.
-          Ultimately, I had to acknowledge that although we had a fantastic vision for Atomc Armies, it seemed very unlikely that we could deliver on it.
-
-        figure
-          .image.js-image(
-            data-src="aa2_design_doc"
-            data-type="jpg"
-            data-width="667"
-            data-link="./assets/downloads/atomic_armies_design_doc.pdf"
-          )
-          figcaption.caption.
-            <a href="./assets/downloads/atomic_armies_design_doc.pdf" target="_blank">Atomic Armies design doc.</a>
-
-        h2.h2.
-          I had to call it quits and move on
-
-        p.p.
-          Life was also starting to get very real for me. I had proposed to Karla over the summer (she said yes, bless her patient, forgiving heart). We had started planning our wedding, and it wasn&rsquo;t going to be cheap. I had been eating Subway pretty much every day, living like a college student, and my health was suffering, but my savings were still hurting after two years of almost no income. I had to face it: to make the future I wanted for me and Karla a reality, I would need to make money. It didn&rsquo;t look like Atomic Armies was going to be a cash cow any time soon.
-
-        p.p.
-          I needed a new career. But in what? Games? I took stock of my current situation and realized that I had spent two years learning about things that were now basically worthless:
-
-        ul.list
-          li.
-            I had thrown myself into game development, which is a notoriously difficult industry in which to make money. It didn&rsquo;t seem like a career as a game developer was an option.
-          li.
-            I had doubled down on social games, but social games as an industry was dying. Even Zynga was struggling. Now everyone was playing games on their phones.
-          li.
-            I had spent thousands of hours becoming a better Flash and AS3 developer. But as Steve jobs had famously proclaimed, <a href="http://www.apple.com/hotnews/thoughts-on-flash/" target="_blank">Flash was dead</a> &mdash; it had been supplanted by native languages and HTML5 and now it was a worthless skill to put the résumé.
-
-        p.p.
-          There was very little demand for the skills and knowledge I had worked so hard for. What was I doing with my life? What the hell was I going to do now? Doubts ate at me. I was scared sick.
-
-        p.p.
-          I spent some time interviewing at several social game companies and found them all incredibly depressing. I interviewed at Riot Games and though they seemed like an amazing company, the role was for building UIs in AS2. Blech! No thanks. I decided I didn&rsquo;t really want to work in games. I needed something new.
-
-        p.p.
-          What I had loved the most about working on Atomic Armies was working on the UI and UX. I loved crafting the user experience and building something that people could <em>interact</em> with. I wanted to build products. I had found a new calling, and over the course of the next four years, I gradually built up a successful career as a UI engineer and front-end web developer. It paid the bills, Karla and I got married, Trent attended the wedding, he and I are still friends and collaborate on projects, and now I can look back with relief. Everything worked out in the end.
-
-        h2.h2.
-          I learned a lot from failure
-
-        p.p.
-          I think it&rsquo;s pretty awesome how much Trent and I did, and how genuinely great Atomic Armies could have been, if it had the right resources and experience behind it. I think I read the market right in many ways. Games were definitely ready to get more &ldquo;hardcore&rdquo;. But I don&rsquo;t think reading a market right matters&hellip; clearly, execution is what matters, and I was completely unprepared for what solid execution demanded of me.
-
-        h3.h3.
-          Mistakes made
-
-        p.p.
-          <strong>A messy codebase slowed development to a standstill.</strong> I was a relatively inexperienced developer when I started working on these games, and I made many common architectural and design mistakes. I didn&rsquo;t have a good understanding of the Model-View-Controller or Entity-Component-System architectures, and I didn&rsquo;t understand how to apply SOLID principles to create maintainable code. This resulted in a codebase that scaled very badly. The more code I wrote, the more difficult it became to maintain. Eventually, I couldn&rsquo;t write any more code.
-
-        p.p.
-          <strong>The visual style was too dependent upon artwork.</strong> Though Trent&rsquo;s artwork is what basically set Atomic Armies apart, it was also a huge burden on a single artist, and it created a bottle-neck in game development. If we had chosen an art style that was simpler (think: Tetris), we could have spent more time testing the game and developing the gameplay. In other words, instead of making it just <em>look</em> better, we could made it actually&hellip; better.
-
-        p.p.
-          <strong>We had too many game mechanics to fine-tune and balance.</strong> Atomic Armies had war simulation mechanics, multiplayer mechanics, social mechanics, and virtual economy mechanics. A game with this many complex interacting mechanics is difficult for even large, experienced teams to get right. It was an impossible task for a single inexperienced developer and a single artist.
-
-        h3.h3.
-          Lessons learned
-
-        p.p.
-          <strong>Set realistic goals.</strong> Know your limits. Know where your passions lie. Set conservative goals that keep both in mind.
-
-        p.p.
-          <strong>Have a plan.</strong> Form a step-by-step plan that leads to your goal. If you&rsquo;re deviating from the plan, ask why. If it&rsquo;s because you&rsquo;re losing focus, change what you&rsquo;re doing. If it&rsquo;s because your goals were wrong, change your goals.
-
-        p.p.
-          <strong>Build a team.</strong> Find talented people who want the same goals as you, and trust them. Ask them for help, lean on them for support, and let go of control. You have more to gain than you have to lose.
+            figcaption.caption.
+              This is Atomic Armies, the last game I made. <strong><a href="./game" target="_blank">Play the demo.</a></strong>
+
+          h2.h2.
+            I had no clue what I was doing
+
+          p.p.
+            My story begins in April of 2010. I was 26 years old, I was in a serious relationship with a girl named Karla, and I was starting to burn out at the tail-end of a successful visual effects career. This career consisted of churning out renders of particle systems and simple physics simulations, which were then composited into commercials to be broadcast on TV. I would work on contract for a few months at a time, take a break for a week or two, and then repeat the cycle. I loved the work when I first started. After a few years of the same thing over and over, I wanted out.
+
+          p.p.
+            At the time, Mafia Wars had just put Zynga on the map, dazzling tech journalists, entrepreneurs, and VCs with the magic of social gaming. &ldquo;Social&rdquo; was the buzzword of the day (later, &ldquo;mobile&rdquo; and &ldquo;local&rdquo; would usurp the throne). I decided this was my opportunity to quit my day job to fame, glory, and riches. I gave notice and I was on my way.
+
+          blockquote.panel
+            .panelTitle
+              | How I knew I had to quit my job
+            p.panel__p.
+              I think if you feel like you&rsquo;re getting less out of your job than you&rsquo;re putting in, then it&rsquo;s a good time to leave. And this is especially true when you&rsquo;re young and have fewer responsibilities, because that&rsquo;s the best time you can take risks and recover from failure.
+            p.panel__p.
+              In terms of my job, I had become really good at writing one-off programs that generated interesting visual effects, but I felt like I had hit a plateau. I wasn&rsquo;t learning anything new and I felt like I was wasting my time.
+            p.panel__p.
+              In terms of risk, I knew I wanted to marry Karla, and down that road lay responsibilities like car loans, a mortgage, and kids. Women have the best chance at a healthy pregnancy before 35, so I had a pretty hard window in which I could attempt my reach goals before I had to get serious about being a grown-up.
+
+          p.p.
+            It&rsquo;s embarrassing to admit how clueless I was. Game dev consists of making games and then making money with them. Instead, I did everything else:
+
+          ul.list
+            li
+              | I thought I needed to establish a formal business. So I created a company called Elevated Games, registered an LLC in Delaware with LegalZoom, opened up a business checking around with Chase, designed a company logo and website, and printed up a ton of business cards, most of which I ended up throwing away.
+              figure
+                .image.js-image(
+                  data-src="elevated_games_card"
+                  data-type="jpg"
+                  data-width="905"
+                )
+                figcaption.caption.
+                  I would have preferred the title, &ldquo;Creative Dictator&rdquo;.
+            li.
+              I thought I needed a business plan, so I paid someone $5,000 to <a href="./assets/downloads/elevated_games_business_plan.pdf" target="_blank">write one up</a>. It contained a SWOT analysis and a bunch of other stuff which didn&rsquo;t have any effect except reduce the balance in that Chase business checking account.
+            li.
+              I thought I needed a scalable infrastructure, and I had read something about sharding online. It seemed important, so I hired a software engineer from Google to set up some servers for me and build a deployment system. Classic case of over-engineering.
+            li.
+              At the time, doing development &ldquo;right&rdquo; meant doing Scrum. So I read up on story points and burndown charts and sprints, and once I finally got around to development I did a one-man variant of Scrum. Here&rsquo;s a snapshot of my <a href="./assets/product_backlog/index.html" target="_blank">product backlog</a>, which I made with Google Spreadsheets.
+
+          p.p.
+            When I think back on these mistakes, I like to remind myself that mistakes are learning experiences, and the important thing is to avoid making the same mistake twice.
+            Fortunately, after a few months of screwing around and wasting my limited amount of money, I learned my lesson. I vowed to save my money and focused on developing my first game.
+
+          blockquote.panel
+            .panelTitle
+              | I should have cut out the bullshit
+            p.panel__p.
+              If I could do one thing differently, I would have said &ldquo;no&rdquo; to more things.
+            p.panel__p.
+              I would have defined an MVP as my goal. Some low-hanging fruit. Then I would have plotted out the shortest course to plucking it. Instead of a goal of &ldquo;making a million dollars with a social game.&rdquo;, I should have gone for &ldquo;making a fun single-player game.&rdquo; This goal is specific and clear, and would have resulted in a smaller, better-defined scope.
+            p.panel__p.
+              To form a plan, I should have asked myself, &ldquo;What&rsquo;s stopping me from accomplishing that today?&rdquo; I would have ended up with a to-do list that would have inevitably to accomplishing my goal. And I bet creating an LLC and writing a business plan wouldn&rsquo;t have been on it.
+
+          h2.h2.
+            I made my first game: &ldquo;Armies&rdquo;
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              The game takes place after a nuclear war, and civilization has been wiped out. You emerge from your bunker and have to reclaim decimated cities, build your tech tree and army, and work with your friends to battle and defeat other players for resources.
+
+          p.p.
+            This was the idea behind my first game, which I called &ldquo;Armies&rdquo;. The basic idea of the game was simple. There&rsquo;s a battlefield with enemy units on the right side. You put your units on the left side. The two sides meet in the middle and battle ensues! It was essentially a multiplayer version of a Flash game I liked, called
+            <a href="http://armorgames.com/play/4264/colony" target="_blank">Colony</a>.
+
+          p.p.
+            Armies had a single-player portion allowed you to attack cities, which would earn you a slow, steady stream of resources once conquered. It was inspired by Farmville&rsquo;s core game loop, but with war instead of farming. You could also wage war against your friends which, besides being more fun, would also earn you more resources. When you launched an attack, you would go through a set-up phase where you have to pick the units you want to send into battle and arrange them into a formation. This interaction was inspired by the way the original StarCraft let you load up Dropships and Overlords. With the resources you earned, you could buy more units.
+
+          figure
+            .image.js-image(
+              data-src="aa0_gameplay"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              Armies wasn&rsquo;t the prettiest belle at the ball, but it was playable.
+
+          figure
+            iframe.audio(
+              width="100%"
+              height="100"
+              scrolling="no"
+              frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/261447261&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"
+            )
+            figcaption.caption.
+              But it did have its own theme song! Music by sound-genius <a href="http://www.manifestmusicproductions.com/" target="_blank">Adam Berg</a>.
+
+          p.p.
+            On June 27, 2010, I entered Armies into beta testing on Facebook. My friends helped me out a <strong>lot</strong> here. The trolls among them were the best. They played the most because they kept discovering game imbalance exploits and would use them to harass other players (I&rsquo;m looking at you, Damien, Ben, and Groves). I gathered some great feedback on what was fun and what wasn&rsquo;t.
+
+          h2.h2.
+            I met Trent Kaniuga, the God of Game Art
+
+          p.p.
+            On July 25, 2010, I found <a href="http://41.media.tumblr.com/tumblr_lfsjvmX8df1qd9jlto1_500.jpg" target=_"blank">this painting of a Marine battling Hydralisks</a> on DeviantArt. It was painted by a Blizzard concept artist named Trent Kaniuga. This guy was a god. I decided to reach out and see if he would be interested in working with me on Armies. Here are a couple snippets from my email:
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              So maybe you&rsquo;ve already heard pitches like this from other people who were dreamers and had ideas they couldn&rsquo;t pull off.  My only difference from them is that I&rsquo;m taking Armies to completion and, if all goes well, profitability.  So my question for you is: do you want to do a little work on what&rsquo;s going to be the funnest, most badass, ground-breaking social game yet made?  For uh, cheap?  I would absolutely love to have your help.
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              So, if you ARE down to help out, you&rsquo;d really be the coolest guy I know.  Which is quite a laudable distinction and totally worth doing work for next-to-nothing for me.  Oh, and besides an insultingly low amount in payment, I can also offer you my help doing the Flash programming of your next portfolio site.  And who could say no that&hellip;?
+
+          p.p.
+            And, what do you know? It worked. Trent, you big softie! Here are a few snippets of his reply:
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              At first glance, I can see a great deal of potential in your future as a game dev. You&rsquo;ve got a great attitude, and are very personable in your communications, as well as passionate about what you are creating.  It takes a unique kind of personality to balance the artist, the programmer and the businessman, while also having good social skills.  
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              In my opinion, [Armies] needs a complete visual overhaul.  You need a distinct visual style that sets it apart from other games of its type. It needs to have a bit more flare, and polish.  To do this, I&rsquo;d want to have all new character images, and possibly 2-3 frame animations for each plus new background tiles.  Menu and interface needs a slick new touch, perhaps with animations as you mouse over them. Also, you&rsquo;ll need more interesting names for your unit types. You&rsquo;re going to need a strong logo, and a better title. 
+
+          p.p.
+            This is known as the &ldquo;sandwich method&rdquo; of giving feedback. First you say something nice. Then you give the hard criticism in the middle. And then you end it with something nice again:
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+               I&rsquo;d be interested in working with you on your next project. Sort of a&hellip; testing period. I&rsquo;d like to put together something quick, and fun. Maybe a puzzle game, or something that can be made within 3 months of our free time. Polish it, test the hell out of it, balance it, and release it. 
+
+          p.p.
+            Remember what I said earlier about cutting out the bullshit? Trent already knew how to do that. As an industry veteran and a life-long creative, he had a ton of experience working on video games and building stuff.
+
+          p.p.
+            But I didn&rsquo;t listen to him! I pushed back, and Trent agreed to provide the art for Armies for a price point that worked for both of us. Two weeks after I emailed him, he sent me his first sketch. It was gorgeous. No matter how bad the game itself was, at least I knew Armies was going to look beautiful.
+
+          figure
+            .image.js-image(
+              data-src="aa1_sketches"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              WOWZA!
+
+          blockquote.panel
+            .panelTitle
+              | How to ask for help
+            p.panel__p.
+              The hardest part about asking for help is simply doing it. It&rsquo;s like how 90% of a job is simply showing up. If you want someone&rsquo;s help, just <em>ask</em>.
+            p.panel__p.
+              Beyond that, ask nicely. Show respect for the person by showing that you have done your homework and point out why you value you them. Show them how they can help you so they understand what you&rsquo;re asking them for and why. And show that you respect their time by not writing a novel when a few paragraphs will do.
+            p.panel__p.
+              And be honest. Rep yourself truthfully. If you really are a big shot with a huge budget and a stack of successes to sit on, then share that information. But if you&rsquo;re still in the gutter staring at the stars, be honest about that too.
+
+          h2.h2.
+            We improved the game and renamed it &ldquo;<em>Atomic</em> Armies&rdquo;
+
+          p.p.
+            For the next three months, I worked on the gameplay, polished the UI, added new social game mechanics and other features, and Trent delivered the artwork. On November 15, 2010, we launched the new, Trent-infused &ldquo;Atomic Armies&rdquo;. I had added a couple features like a step-by-step onboarding walk-through, an XP-based leveling system, a data visualization of past wins and losses, and you could use virtual currency to buy in-game resources and XP. Trent&rsquo;s artwork really stood out.
+
+          figure
+            .image.js-image(
+              data-src="aa1_gameplay"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              The game was more fun, it looked cool, and Trent&rsquo;s art was stellar.
+
+          figure
+            .videoContainer
+              iframe.video(
+                src="https://player.vimeo.com/video/164033598"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+              )
+            figcaption.caption.
+              Atomic Armies gameplay.
+
+          figure
+            .image.js-image(
+              data-src="aa1_units"
+              data-type="jpg"
+              data-width="1206"
+            )
+            figcaption.caption.
+              Trent painted all these units in vector.
+
+          figure
+            .image.js-image(
+              data-src="aa1_logo"
+              data-type="jpg"
+              data-width="1005"
+            )
+            figcaption.caption.
+              I love typography, so I designed this logotype.
+
+          figure
+            .image.js-image(
+              data-src="aa1_cities"
+              data-type="jpg"
+              data-width="1397"
+            )
+            figcaption.caption.
+              I pieced together these new City images from Trent&rsquo;s assets.
+
+          p.p.
+            During development, I had this idea that players would really want to be able to customize their armies. I thought that picking a color for your army would be a great way to do that, so Trent grudgingly provided me with vector assets, split into separate stroke and color layers. When a player chose a color for their army, their units&rsquo; color layers would hue shift to show the correct color. I thought this was a pretty neat feature at the time.
+
+          p.p.
+            There were other cool features I pushed into the game which may not have been worth it. I created an elaborate effects system to allow each unit&rsquo;s attack to be visually unique. For example, the Medtruck unit would emit an undulating heal ray that would arc out and heal friendly units, while lobbed mortar rounds would be controlled by a simple physics sim to be brought down upon the enemy army. There were also sniper rays, machine gun tracer rounds, and laser beams.
+
+          p.p.
+            My favorite technical aspect of this game was that every battle was completely deterministic. So, given the same army formations for each side, each battle would unfold in exactly the same way. I leveraged this to add a &ldquo;Replay&rdquo; feature, which allowed players to re-watch past battles with very little data stored in the database.
+
+          h2.h2.
+            The game sucked, so we had to kill it
+
+          p.p.
+            In late December of 2010, I decided to open the game to the public and start driving traffic to it. I created Facebook ads targeting people who played my competitors&rsquo; games. The best ones got a click-through rate of 1.8%; much better than the typical 0.05% CTR for an ad on Facebook. I remember being very proud of this.
+
+          p.p.
+            Driving traffic to the game was only one step. I had three critical KPIs: stickiness (a measure of how often players returned to the game), virality (a measure of how many players recruited their friends to play), and monetization. By January of 2011, none of these numbers were very good.
+
+          ul.list
+            li.
+              People would play the game like crazy for a few days, and then stop playing entirely.
+            li.
+              People weren&rsquo;t sharing the game with their friends, probably because I hadn&rsquo;t built in the right social game mechanics to incentivize that kind of behavior.
+            li.
+              And worst of all, very few players were buying my virtual currency. In a couple months, my revenue was less than $200.
+
+          p.p.
+            By February of 2011, it had dawned on me that I had built several fundamental flaws into my game. It played more like a Flash game than a social game, it didn&rsquo;t contain enough content to sustain a single-player experience, and it lacked the social mechanics to sustain a multi-player experience. Based on the messiness of the codebase, I doubted I would able to fix these crippling problems, and the challenge of being a one-man game dev team for 6 months had worn me down. I felt close to quitting. With my back against the wall, I decided to make a last-ditch effort save Atomic Armies before declaring it a failure.
+
+          h3.h3.
+            I tried to find a partnership
+
+          p.p.
+            I submitted the game to 6waves, a large social and mobile games publisher. If I could get their marketing power behind the game, I could pull more players in and increase revenue. Unfortunately, they saw the same flaws in the game that I did and decided to pass.
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              &ldquo;[The review board] liked the art style and audio, but the main challenges were the economy of the game and user retention based on the existing features.  More specifically, the feedback was that there's not enough for people to purchase, the game is balanced such that users run out of coins too easily and there aren't enough motivations for users to come back to the game.&rdquo;
+            .quoteFooter.
+              &mdash; 6waves&rsquo;s rejection email
+
+          h3.h3.
+            I looked for investors
+
+          p.p.
+            I thought there was a chance I could fix Atomic Armies&rsquo;s problems if I had more developers, but I needed money to pay them. So I asked Trent for his permission to portray him as our offical Art Director and I put together a
+            <a href="https://www.slideshare.net/secret/urQbIdrJ8630CS" target="_blank">pitch deck</a> to shop around with angels like Paige Craig and Tech Coast Angels. While I think I did a good job with the deck, it wasn&rsquo;t enough to hide the problems with Atomic Armies, and I found no takers.
+
+          figure
+            .image.js-image(
+              data-src="aa1_pitch_slide"
+              data-type="jpg"
+              data-width="630"
+              data-link="https://www.slideshare.net/secret/urQbIdrJ8630CS"
+            )
+            figcaption.caption.
+              The opening slide from our <a href="https://www.slideshare.net/secret/urQbIdrJ8630CS" target="_blank">pitch deck</a>.
+
+          h3.h3.
+            I tried to get acquired
+
+          p.p.
+            So I thought, &ldquo;Well, if nobody wants to invest, maybe somebody will buy?&rdquo; In March, I went to SF and met with Zynga&rsquo;s Head of Corporate Development, Terence Fung, to see if Zynga would be interested in purchasing Atomic Armies. While I had a great visit with Terence, it was clear that an acquisition was not a possibility. I remember at one point I directly asked Terence: &ldquo;What do we need to do to get acquired?&rdquo; I don&rsquo;t think he quite knew how to answer that. There really was no compelling reason for anyone to purchase a game like Atomic Armies or a company like Elevated Games.
+
+          blockquote.panel
+            .panelTitle
+              | I should have planned around my goals
+            p.panel__p.
+              I found myself in such a bad spot because I had failed to plan ahead. Instead of rushing headlong into making the game, I should have defined success and then worked backwards to clearly define the steps I would have had to take to succeed.
+            p.panel__p.
+              I would have defined success as: &ldquo;Becoming a millionaire.&rdquo; To get there, I would have needed lots of people playing my game. I would have had to make the game incredibly viral to get the number of players I needed. That level of virality would have required strong social mechanics. Building these kinds of social mechanics would have required a robust metrics system and a clean, maintainable codebase for fast iteration.
+            p.panel__p.
+              If I had had this plan, I would have been focused on the important things, not features that I just thought were cool. I also would have been able to track how closely I was following the plan, and I probably would have anticipated failure much earlier and been able to do something about it.
+
+          h2.h2.
+            We pivoted with new game mechanics and a new look
+
+          p.p.
+            In that same month, February of 2011, I had a heart-to-heart with Trent about what I had done wrong. I had been out of my depth during the development process, and I really wanted to share more creative control with Trent. Out of that conversation came some thoughts on what we could do <em>next</em>, and what to do <em>better.</em> Before I knew it, we were in full-on creative overdrive, riffing on some exciting new ideas for a new version of Atomic Armies.
+
+          p.p.
+            Trent wanted to take the game in a more story-oriented and visual direction. He whipped up some storyboards to communicatye his ideas. They were awesome! On February 23, 2011, I used his assets to create a rough prototype where you could place bunkers and marines on an isometric surface, and watch them shoot each other. While I was in SF, I demoed this prototype for a room full of programmers at a local meetup, and they loved it! Suddenly, I felt hope.
+
+          p.p.
+            A game on Facebook caught my eye: Backyard Monsters. This was an isometric war game, in which you built up a base and an army, and used your army to attack your friends&rsquo; bases. And it had attracted a devoted following of players who absolutely loved it. I saw possibilities of marrying these gameplay mechanics with Trent&rsquo;s new creative vision. After talking it over, we decided to go for it.
+
+          figure
+            .image.js-image(
+              data-src="aa2_sketch_storyboards"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              Trent&rsquo;s awesome storyboards gave me new energy.
+
+          figure
+            .image.js-image(
+              data-src="aa2_sketch_buildings"
+              data-type="jpg"
+              data-width="942"
+            )
+            figcaption.caption.
+              I made a prototype with these initial assets, and it was immediately more fun than the original Atomic Armies.
+
+          blockquote.panel
+            .panelTitle
+              | The more trust you put into a partnership, the more you get out
+            p.panel__p.
+              It took time for Trent and I to figure each other out. We needed to learn each others&rsquo; strengths and weaknesses, and earn each others&rsquo; trust. This meant that I was initially very cautious with Trent, and relucant to give him too much responsibilitiy.
+            p.panel__p.
+              In retrospect, I wish I had shared creative ownership with him sooner. I think creative individuals do their best work when they have creative control. If we had established a work relationship based on shared ownership earlier in our relationship, then I think we could have produced better work, more quickly.
+            p.panel__p.
+              A partnership is also about using each others&rsquo;s strengths to protect against your own weaknesses. In a complementary partnership, you&rsquo;re less likely to make stupid decisions because you have multiple viewpoints on a situation and you&rsquo;ll be compelled to compromise with one another.
+
+          h2.h2.
+            We made a whole new Atomic Armies
+
+          p.p.
+            I wanted to make StarCraft for Facebook. We spent eight months rebuilding Atomic Armies as an isometric war game.  Want to play a single-player demo?
+            <a href="./game" target="_blank"><strong><em>Of course you do!</em></strong></a>
+
+          figure
+            .image.js-image(
+              data-src="aa2_screenshots"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              I&rsquo;m really proud of the level of polish our two-person team was able to accomplish.
+
+          figure
+            .image.js-image(
+              data-src="aa2_buildings"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              The buildings in the top row made it into the game, but I didn&rsquo;t have time to add the doodads in the bottom row.
+
+          figure
+            .image.js-image(
+              data-src="aa2_logo"
+              data-type="jpg"
+              data-width="885"
+            )
+            figcaption.caption.
+              I designed a new logo.
+
+          figure
+            .image.js-image(
+              data-src="aa2_alphabet"
+              data-type="jpg"
+              data-width="672"
+              data-link="./assets/downloads/AtomicAlphabet.otf"
+            )
+            figcaption.caption.
+              I also made this custom typeface, Atomic Alphabet.
+              You can <a href="./assets/downloads/AtomicAlphabet.otf">install the font file</a> and use it in your TPS reports.
+
+          h2.h2.
+            We bit off way more than we could chew
+
+          p.p.
+            A whole slew of new challenges came with this pivot. Early on in this second stage of our project, on April 22, 2011, Trent pointed out our critical challenge:
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              The primary problems that we will face will derive from the complexity of design for a project of this scope. We haven&rsquo;t even gotten to the part where we are actually making a game yet. AND NOT unreasonably btw&hellip; with such limited resources.  Building the assets is only a part of the game development process.  This is kind of why AA 1 was not so fun.  Hardly any time was spent on the design.
+
+          blockquote.quote
+            .quoteBody.quoteBody--small.
+              Normally, a designer would be steering the boat on what unit types, and building values we should be developing.  So we are very much &ldquo;feeling it out&rdquo;, hoping that it comes together later.  But we kind of have to do it that way since we are only 2 people.  This is what I mean when I talk about the scope of the project being too large.  This is another reason why I pushed for a simpler project.
+
+          p.p.
+            Trent had a knack for pointing out core problems with our goals and suggesting reasonable solutions. I had an equal talent for not getting the message. Here were some of the biggest hurdles we encountered:
+
+          h3.h3.
+            We wanted way more content
+
+          p.p.
+            The first version of Atomic Armies had non-animated units, which only faced in one direction. The time around, we were adding buildings into the mix, we were going to animate both the units and the buildings (the units would need walk, attack, and death animations), and the units would need to be portrayed facing in 5 different directions. This created an <strong>enormous</strong> workload for Trent. As fast as he could work, it still took a long time to get all of the art ready. Fortunately (or unfortunately?), I had an equally enormous development task ahead of me.
+
+          figure
+            .image.js-image(
+              data-src="aa2_units"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              Each unit required 4x to 10x as much artwork as in the original.
+
+          p.p.
+            All of our animations needed to be stored as spritesheets, so I built a special tool for Trent to use to convert his artwork into game-ready assets. Building and maintaining this tool took time.
+
+          p.p.
+            I also needed to create new bases for the NPCs in the single-player campaign. I needed to create a rapid iteration loop where I could tweak a base and quickly try it out. To do that, I built an app called AtomicEditor which would let me load and save bases as CSV files, which I could then test in the game. This was another tool which took time to build and maintain.
+
+          h3.h3.
+            We needed a lot of new &ldquo;glue&rdquo; systems
+
+          p.p.
+            I needed new systems for the &ldquo;glue&rdquo; of the game: an animation system, a tutorial scripting system, a dialogue scripting system, and resource-production and resource-management systems, to name a few. Fortunately, I was able to apply many of the lessons I had learned from building the glue systems for the first Atomic Armies. Unfortunately, I&rsquo;ve realized I need to do things wrong two or three times before I finally figure out how to do them right. :)
+
+          figure
+            .image.js-image(
+              data-src="aa2_npcs"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              We introduced NPCs that displayed different emotions depending on the in-game dialogue. From top to bottom: The Chief, Red Reject, Slime, Bread Faction, Killbot.
+
+          figure
+            .image.js-image(
+              data-src="aa2_explosions"
+              data-type="jpg"
+              data-low-res
+            )
+            figcaption.caption.
+              Animations like these explosions required their own system.
+
+          p.p.
+          h3.h3.
+            Isometric space introduced a ton of new issues
+
+          p.p.
+            The core shift to an isometric game meant that I had to store the location of all renderable game objects in isometric game-space, and then map their coordinates to screen-space when rendering them. Fortunately, <a href="https://github.com/as3isolib/as3isolib.v1" _target="_blank">As3isolib</a> solved this coordinate-tracking problem for me (and I became friends with its author, Justin Opitz).
+
+          p.p.
+            However, performance was an issue. Walls were composed of individual blocks, and players would need to build a lot of walls. Rendering each of these blocks as layered sprites slowed performance down to a crawl. I solved this problem by rendering each game object to a single bitmap, and then displaying that bitmap each frame. This process is called blitting.
+
+          p.p.
+            But then this created a new problem: hit-testing. With mouse events being dispatched from a single bitmap, how could I tell which game object the cursor was currently interacting with? My solution was to blit a uniquely-colored silhouette of each game object to a separate bitmap.  To correlate mouse position with a unit, I would determine the color of the pixel that the cursor was over, and then use this unique color to identify the corresponding game object. I created an open source library called <a href="https://github.com/cjcenizal/Blis" _target="_blank">Blis (BLitting Isometric System)</a> to handle this logic.
+
+          h2.h2.
+            Despite the challenges, there were good parts
+
+          p.p.
+            Some of these challenges were also much easier to overcome than I thought, largely due to the great third-party tools that were available. I learned a lot about the Entity Component System architecture from <a href="http://www.richardlord.net/blog/what-is-an-entity-framework" _target="_blank">Richard Lord&rsquo;s blog</a>, and utilized its concepts with the <a href="https://github.com/PushButtonLabs/PushButtonEngine" _target="_blank">PushButton Engine framework</a> (and I later became friends with its author, <a href="https://bengarney.com/" target="_blank">Ben Garney</a>). We used PlayerIO (eventually sold to <a href="http://gamesplatform.co/" target="_blank">The Game Platform Company</a>) to provide the back-end and handle multiplayer networking (and I later became friends with one of its founders, <a href="http://chrisbenjaminsen.com/" target="_blank">Chris Benjaminsen</a>). And I learned a lot about game programming patterns from the aptly-named <a href="http://gameprogrammingpatterns.com/" target="_blank">Game Programming Patterns book</a> by Robert Nystrom. Incidentally, the design of this book had a huge influence on me in terms of documentation design, which would affect me throughout my later career.
+
+          p.p.
+            One of the best things to come out of this process was that I learned how much I love UI and UX development. I spent way too much time fine-tuning things like visual appearance, transitions, animations, and interactive states to make every little micro-interaction as fun as possible.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_full"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              I asked Trent to make &ldquo;full&rdquo; Generators look painfully bloated, to make users feel compelled to relieve them of their resources.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_harvest"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              Resource-collection should be an enjoyable activity, so I designed resources to look like candy, and animated them to playfully bounce out onto the ground.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_landing"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              When you send troops to attack an enemy base, a delivery pod slams into the ground, causing the ground to shake.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_boom"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              I wanted you to feel it in your gut when you destroyed a building: they explode, shake the ground, and vomit resources.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_walls"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              Even an action as mundane as placing walls should be fun and simple, so I used the A* path-finding algorithm to wrap walls around buildings and other obstacles.
+
+          p.p.
+            I also worked motion-based cues into aspects of the UI.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_no"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              When you try to perform a disallowed action, you get a feedback tooltip which shakes back and forth, like a person shaking his or head &ldquo;no&rdquo;.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_prompt"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              When you start the game, you enter an onboarding tutorial. I made the &ldquo;continue&rdquo; button pulse at intervals, to grab the user&rsquo;s attention and make you want to click.
+
+          figure
+            .image.js-image(
+              data-src="aa2_animation_modal"
+              data-type="gif"
+              data-low-res
+            )
+            figcaption.caption.
+              I added a staggered animation to the modal transition-in, to make it feel bouncy and bubbly.
+
+          h2.h2.
+            We launched the game in a half-formed state
+
+          p.p.
+            On October 18, 2011, eight months of work, we launched the new and improved Atomic Armies! A week later, I made a <a href="./assets/downloads/atomic_armies_design_doc.pdf" target="_blank">design doc</a> to capture our vision for the game and outline where we were going to take the game over the course of the next few months.
+
+          p.p.
+            Seeing the future in clearer detail also made it apparent that we still had a lot of work to do. The game we had launched was only partially complete. We were missing tons of content and features, we hadn&rsquo;t spent any time developing the game mechanics, let alone the social mechanics, and there were plenty of bugs to fix. But based on how much time it had taken to get this point, and how much farther we needed to go, it seemed like the game was going to demand a <strong>lot</strong> of time. Possibly more time than either Trent or I had.
+
+          p.p.
+            Not only did the game still need a lot of work, but I had come to realize the codebase was messy and too unwieldy for me to get work done quickly or easily. I had written myself into a corner: the game was in a playable state, but not an iterable state. I started to re-architect it, but the enormity of the task at hand was daunting. And every day I spent refactoring and re-architecting was a day not spend on adding sorely-needed features.
+
+          p.p.
+            Ultimately, I had to acknowledge that although we had a fantastic vision for Atomc Armies, it seemed very unlikely that we could deliver on it.
+
+          figure
+            .image.js-image(
+              data-src="aa2_design_doc"
+              data-type="jpg"
+              data-width="667"
+              data-link="./assets/downloads/atomic_armies_design_doc.pdf"
+            )
+            figcaption.caption.
+              <a href="./assets/downloads/atomic_armies_design_doc.pdf" target="_blank">Atomic Armies design doc.</a>
+
+          h2.h2.
+            I had to call it quits and move on
+
+          p.p.
+            Life was also starting to get very real for me. I had proposed to Karla over the summer (she said yes, bless her patient, forgiving heart). We had started planning our wedding, and it wasn&rsquo;t going to be cheap. I had been eating Subway pretty much every day, living like a college student, and my health was suffering, but my savings were still hurting after two years of almost no income. I had to face it: to make the future I wanted for me and Karla a reality, I would need to make money. It didn&rsquo;t look like Atomic Armies was going to be a cash cow any time soon.
+
+          p.p.
+            I needed a new career. But in what? Games? I took stock of my current situation and realized that I had spent two years learning about things that were now basically worthless:
+
+          ul.list
+            li.
+              I had thrown myself into game development, which is a notoriously difficult industry in which to make money. It didn&rsquo;t seem like a career as a game developer was an option.
+            li.
+              I had doubled down on social games, but social games as an industry was dying. Even Zynga was struggling. Now everyone was playing games on their phones.
+            li.
+              I had spent thousands of hours becoming a better Flash and AS3 developer. But as Steve jobs had famously proclaimed, <a href="http://www.apple.com/hotnews/thoughts-on-flash/" target="_blank">Flash was dead</a> &mdash; it had been supplanted by native languages and HTML5 and now it was a worthless skill to put the résumé.
+
+          p.p.
+            There was very little demand for the skills and knowledge I had worked so hard for. What was I doing with my life? What the hell was I going to do now? Doubts ate at me. I was scared sick.
+
+          p.p.
+            I spent some time interviewing at several social game companies and found them all incredibly depressing. I interviewed at Riot Games and though they seemed like an amazing company, the role was for building UIs in AS2. Blech! No thanks. I decided I didn&rsquo;t really want to work in games. I needed something new.
+
+          p.p.
+            What I had loved the most about working on Atomic Armies was working on the UI and UX. I loved crafting the user experience and building something that people could <em>interact</em> with. I wanted to build products. I had found a new calling, and over the course of the next four years, I gradually built up a successful career as a UI engineer and front-end web developer. It paid the bills, Karla and I got married, Trent attended the wedding, he and I are still friends and collaborate on projects, and now I can look back with relief. Everything worked out in the end.
+
+          h2.h2.
+            I learned a lot from failure
+
+          p.p.
+            I think it&rsquo;s pretty awesome how much Trent and I did, and how genuinely great Atomic Armies could have been, if it had the right resources and experience behind it. I think I read the market right in many ways. Games were definitely ready to get more &ldquo;hardcore&rdquo;. But I don&rsquo;t think reading a market right matters&hellip; clearly, execution is what matters, and I was completely unprepared for what solid execution demanded of me.
+
+          h3.h3.
+            Mistakes made
+
+          p.p.
+            <strong>A messy codebase slowed development to a standstill.</strong> I was a relatively inexperienced developer when I started working on these games, and I made many common architectural and design mistakes. I didn&rsquo;t have a good understanding of the Model-View-Controller or Entity-Component-System architectures, and I didn&rsquo;t understand how to apply SOLID principles to create maintainable code. This resulted in a codebase that scaled very badly. The more code I wrote, the more difficult it became to maintain. Eventually, I couldn&rsquo;t write any more code.
+
+          p.p.
+            <strong>The visual style was too dependent upon artwork.</strong> Though Trent&rsquo;s artwork is what basically set Atomic Armies apart, it was also a huge burden on a single artist, and it created a bottle-neck in game development. If we had chosen an art style that was simpler (think: Tetris), we could have spent more time testing the game and developing the gameplay. In other words, instead of making it just <em>look</em> better, we could made it actually&hellip; better.
+
+          p.p.
+            <strong>We had too many game mechanics to fine-tune and balance.</strong> Atomic Armies had war simulation mechanics, multiplayer mechanics, social mechanics, and virtual economy mechanics. A game with this many complex interacting mechanics is difficult for even large, experienced teams to get right. It was an impossible task for a single inexperienced developer and a single artist.
+
+          h3.h3.
+            Lessons learned
+
+          p.p.
+            <strong>Set realistic goals.</strong> Know your limits. Know where your passions lie. Set conservative goals that keep both in mind.
+
+          p.p.
+            <strong>Have a plan.</strong> Form a step-by-step plan that leads to your goal. If you&rsquo;re deviating from the plan, ask why. If it&rsquo;s because you&rsquo;re losing focus, change what you&rsquo;re doing. If it&rsquo;s because your goals were wrong, change your goals.
+
+          p.p.
+            <strong>Build a team.</strong> Find talented people who want the same goals as you, and trust them. Ask them for help, lean on them for support, and let go of control. You have more to gain than you have to lose.
+
+          h1.h1.
+            Thanks
+
+          p.p.
+            I just want to say thank you to my wife, Karla, for all of her support during this entire crazy period. She kept me sane and focused, and I am so grateful to her for not trying to talk me out of going unemployed for two years. And thank you to all of the friends who beta tested our games. Thanks for taking the time to play them and point out all of the bugs and imbalances you found. You know who you are.
+
+          p.p.
+            And thank you, Reader, for taking the time to read about this nutty quest! I hope you enjoyed reading about it as much as I enjoyed remembering it.
+
+          p.p.
+            &mdash; <a class="link" href="http://www.cenizal.com" target="_blank">CJ Cenizal</a>, May 10, 2016
+
+        .callToAction
+          .callToActionSection.callToActionSection--left
+            .flag
+              .headshot
+                .headshot__art
+              .flag__body
+                .callToAction__title
+                  | Did you enjoy my story?
+                .callToAction__subTitle.
+                  I&rsquo;m CJ Cenizal, a UI engineer who lives in Los Angeles. Sign up for my newsletter if you&rsquo;d like me me to email you when I create stuff like this.
+          .callToActionSection.callToActionSection--right
+            form(
+              name='ctaEmailForm'
+              action='//flexboxpatterns.us11.list-manage.com/subscribe/post?u=72c0f1de10866c17e5f93e838&amp;id=8769ac6de9'
+              method='post'
+            )
+              label.callToAction__label
+                | Email address
+              input.callToAction__input(
+                name='EMAIL',
+                type='email'
+              )
+              input.callToAction__button(
+                type='submit',
+                value='Join the newsletter'
+              )
+            .callToAction__subText
+              | I promise not to send you spam.
+              br
+              | You can unsubscribe at any time.
 
     script(
       src="./index.js?v=#{DATE_TIME}"

@@ -4,18 +4,21 @@ $bodyWidth: 1200px;
 
 @import 'styles/reset';
 @import 'styles/mixins';
+
 @import 'styles/hero';
 @import 'styles/media';
 @import 'styles/typography';
+@import 'styles/callToAction';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+
+  @include fontFamily;
 }
 
 .body {
@@ -34,23 +37,31 @@ body {
 .bodyContent {
   margin: 0 auto;
   max-width: $bodyWidth;
-  padding: 60px 60px 120px;
   background-color: #FFFFFF;
   color: #3A3A3A;
   border-bottom-left-radius: $bodyRadius;
   border-bottom-right-radius: $bodyRadius;
-
-  @include whenNarrowerThan($condensedBreakpoint) {
-    padding: 30px 42px 60px;
-  }
+  box-shadow: 0 0 5px rgba(black, 0.3);
 
   @include whenNarrowerThan($compressedBreakpoint) {
     margin: 0 auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    padding: 20px 0 40px;
   }
 }
+
+  .bodyContent__inner {
+    padding: 60px;
+    color: #3A3A3A;
+
+    @include whenNarrowerThan($condensedBreakpoint) {
+      padding: 30px 42px 60px;
+    }
+
+    @include whenNarrowerThan($compressedBreakpoint) {
+      padding: 20px 0 40px;
+    }
+  }
 
 del {
   opacity: 0.75;

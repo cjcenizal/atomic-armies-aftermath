@@ -2,13 +2,16 @@
 // Responsive
 
 $largeBreakpoint: 1200px;
-$mediumBreakpoint: 900px;
 $condensedBreakpoint: 900px;
 $compressedBreakpoint: 508px;
 
 /**
  * Mixins
  */
+
+@mixin fontFamily() {
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+}
 
 @mixin whenNarrowerThan($browserWidth) {
   @media only screen and (max-width: #{$browserWidth}) {

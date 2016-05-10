@@ -1,0 +1,156 @@
+
+$ctaSqueezeBreakpoint: 950px;
+$ctaStackBreakpoint: 780px;
+$ctaCondensedBreakpoint: 520px;
+
+.callToAction {
+  margin: 0 auto;
+  max-width: $bodyWidth;
+  display: flex;
+  border-top: 8px solid #00B572;
+  // margin-bottom: 60px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    // flex-direction: column;
+  }
+
+  @include whenNarrowerThan($ctaStackBreakpoint) {
+    flex-direction: column;
+    // margin-bottom: 0;
+  }
+}
+
+.callToActionSection {
+  padding: 20px 30px 30px;
+
+  & + & {
+    border-left: 1px dotted #CDD0D7;
+
+    @include whenNarrowerThan($ctaStackBreakpoint) {
+      border-left: none;
+      border-top: 1px dotted #CDD0D7;
+    }
+  }
+
+  @include whenNarrowerThan($ctaStackBreakpoint) {
+    flex: 1 0 auto;
+  }
+}
+
+.callToActionSection--left {
+  flex: 1 1 0%;
+
+  @include whenNarrowerThan($ctaSqueezeBreakpoint) {
+    flex: 1 1 66.667%;
+  }
+}
+
+.callToActionSection--right {
+  flex: 1 1 0%;
+
+  @include whenNarrowerThan($ctaSqueezeBreakpoint) {
+    flex: 1 1 33.333%;
+  }
+}
+
+  .callToAction__title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #373D44;
+  }
+
+  .callToAction__subTitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #777D8A;
+    margin-top: 10px;
+  }
+
+  .callToAction__label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #373D44;
+    margin-bottom: 6px;
+  }
+
+  .callToAction__input {
+    appearance: none;
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid #CDD4DC;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    @include fontFamily;
+
+    &:focus {
+      outline: none;
+      border-color: #10A9FF;
+      box-shadow: inset 0 0 0 1px #10A9FF;
+    }
+  }
+
+  .callToAction__button {
+    appearance: none;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 11px;
+    background-color: #00B572;
+    border: 1px solid #00B572;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    @include fontFamily;
+
+    &:focus {
+      outline: 1px dotted rgba(black, 0.5);
+    }
+
+    &:hover {
+      box-shadow: 0 2px 3px rgba(black, 0.3);
+    }
+
+    &:active {
+      box-shadow: inset 0 4px 8px rgba(black, 0.3);
+    }
+  }
+
+  .callToAction__subText {
+    font-size: 12px;
+    font-weight: 400;
+    color: #777D8A;
+    margin-top: 10px;
+  }
+
+.flag {
+  display: flex;
+
+  @include whenNarrowerThan($ctaCondensedBreakpoint) {
+    flex-direction: column;
+  }
+}
+
+  .flag__body {
+    padding-left: 20px;
+  }
+
+.headshot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 136px;
+  height: 126px;
+
+  @include whenNarrowerThan($ctaCondensedBreakpoint) {
+    margin: 0 auto;
+  }
+}
+
+  .headshot__art {
+    position: relative;
+    z-index: 1;
+    @include retinaImage('./assets/images/cj_headshot.png', './assets/images/cj_headshot_2x.png', 110px, 110px);
+  }
