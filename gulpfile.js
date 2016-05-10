@@ -41,6 +41,13 @@ gulp.task('copyAssets', () => {
     .pipe(gulpConnect.reload());
 });
 
+gulp.task('copyFavicon', () => {
+  return gulp
+    .src(`${SOURCE_DIR}/favicon/**/*`)
+    .pipe(gulp.dest(`${DISTRIBUTION_DIR}`))
+    .pipe(gulpConnect.reload());
+});
+
 gulp.task('copyGame', () => {
   return gulp
     .src(`./node_modules/atomic-armies-demo/dist/**/*`)
@@ -112,6 +119,7 @@ gulp.task('compileCss:applyPostCss', () => {
 gulp.task('watch', [
   'serve',
   'copyAssets',
+  'copyFavicon',
   'copyGame',
   'compileJs',
   'compileHtml',
