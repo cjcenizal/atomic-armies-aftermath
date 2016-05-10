@@ -104,16 +104,17 @@ $contentWidth: 700px;
 }
 
 .h3 {
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 22px;
 
   @include contentItem;
 
   @include whenNarrowerThan($condensedBreakpoint) {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   @include whenNarrowerThan($compressedBreakpoint) {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
