@@ -17,11 +17,31 @@ var isRetina = function isRetina() {
   return false;
 }();
 
+var loadedImages = {};
+var $document = $(document);
+var $window = $(window);
+var $body = $('body');
+var scrollTop = $body.scrollTop();
+var scrollBottom = scrollTop + $window.height();
+
 var images = $('.js-image');
+for (var i = 0; i < images.length; i++) {
+  images[i] = $(images[i]);
+}
 
-images.forEach(function(image) {
-  var $image = $(image);
+function placeholder($image) {
+  var width = $image.attr('data-width');
+  var height = $image.attr('data-height');
+  var style = 'max-width:' + width + 'px; width: 100%; height:100px;';
+  $image.attr('style', style);
+}
 
+images.forEach(function($image) {
+  placeholder($image);
+});
+
+function loadImage($image, index) {
+  loadedImages[index] = true;
   var lowRes = $image.attr('data-low-res') !== null;
   var suffix = (isRetina && !lowRes) ? '_2x' : '';
   var type = '.' + ($image.attr('data-type') || 'png');
@@ -39,4 +59,36 @@ images.forEach(function(image) {
 
   $linkedImage.append($newImage);
   $image.replaceWith($linkedImage);
+}
+
+function isImageVisible($image, index) {
+  var top = $image.offset().top;
+  return top >= scrollTop && top <= scrollBottom;
+}
+
+function canLoadImage($image, index) {
+  if (!loadedImages[index]) {
+    if (isImageVisible($image, index)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function loadVisibleImages() {
+  scrollTop = $body.scrollTop();
+  scrollBottom = scrollTop + $window.height();
+
+  images.forEach(function($image, index) {
+    if (canLoadImage($image, index)) {
+      loadImage($image, index);
+    }
+  });
+}
+
+loadVisibleImages();
+
+$document.scroll(function() {
+  loadVisibleImages();
 });

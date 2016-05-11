@@ -21,6 +21,7 @@
   .image {
     height: auto;
     max-width: 100%;
+    background-color: rgba(black, 0.05);
 
     @include media;
 
