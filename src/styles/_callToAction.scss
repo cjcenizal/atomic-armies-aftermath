@@ -8,15 +8,13 @@ $ctaCondensedBreakpoint: 520px;
   max-width: $bodyWidth;
   display: flex;
   border-top: 8px solid #00B572;
-  // margin-bottom: 60px;
 
-  @include whenNarrowerThan($condensedBreakpoint) {
-    // flex-direction: column;
+  @include whenNarrowerThan($ctaSqueezeBreakpoint) {
+    display: flex;
   }
 
   @include whenNarrowerThan($ctaStackBreakpoint) {
     flex-direction: column;
-    // margin-bottom: 0;
   }
 }
 
@@ -39,17 +37,17 @@ $ctaCondensedBreakpoint: 520px;
 
 .callToActionSection--left {
   flex: 1 1 0%;
-
-  @include whenNarrowerThan($ctaSqueezeBreakpoint) {
-    flex: 1 1 66.667%;
-  }
 }
 
 .callToActionSection--right {
   flex: 1 1 0%;
 
   @include whenNarrowerThan($ctaSqueezeBreakpoint) {
-    flex: 1 1 33.333%;
+    max-width: 33.333%;
+  }
+
+  @include whenNarrowerThan($ctaStackBreakpoint) {
+    max-width: none;
   }
 }
 
@@ -131,6 +129,10 @@ $ctaCondensedBreakpoint: 520px;
     flex-direction: column;
   }
 }
+
+  .flag__pole {
+    flex: 0 0 auto;
+  }
 
   .flag__body {
     padding-left: 20px;
