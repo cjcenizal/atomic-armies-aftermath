@@ -13,6 +13,18 @@ $contentWidth: 700px;
   }
 }
 
+@mixin contentRhythmParagraph {
+  margin-bottom: 28px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    margin-bottom: 24px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    margin-bottom: 22px;
+  }
+}
+
 @mixin contentHeading {
   font-size: 26px;
 
@@ -25,40 +37,40 @@ $contentWidth: 700px;
   }
 }
 
+@mixin contentRhythmHeading {
+  margin-bottom: 12px;
+
+  @include whenNarrowerThan($condensedBreakpoint) {
+    margin-bottom: 10px;
+  }
+
+  @include whenNarrowerThan($compressedBreakpoint) {
+    margin-bottom: 10px;
+  }
+}
+
 @mixin contentItem {
   margin: 0 auto;
   max-width: $contentWidth;
-
-  @include contentItemRhythm;
 
   @include whenNarrowerThan($compressedBreakpoint) {
     padding: 0 30px;
   }
 }
 
-@mixin contentItemRhythm {
-  margin-bottom: 28px;
-
-  @include whenNarrowerThan($condensedBreakpoint) {
-    margin-bottom: 24px;
-  }
-
-  @include whenNarrowerThan($compressedBreakpoint) {
-    margin-bottom: 22px;
-  }
-}
-
 .list {
   @include contentItem;
+  @include contentRhythmParagraph;
   @include contentParagraph;
 
   li {
-    @include contentItemRhythm;
+    @include contentRhythmParagraph;
   }
 }
 
 .p {
   @include contentItem;
+  @include contentRhythmParagraph;
   @include contentParagraph;
 }
 
@@ -84,15 +96,11 @@ $contentWidth: 700px;
   }
 }
 
-.h1 {
-  @include contentItem;
-  @include contentHeading;
-}
-
 .h2 {
   font-size: 26px;
 
   @include contentItem;
+  @include contentRhythmHeading;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 22px;
@@ -108,6 +116,7 @@ $contentWidth: 700px;
   font-size: 22px;
 
   @include contentItem;
+  @include contentRhythmHeading;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 20px;
@@ -123,7 +132,7 @@ $contentWidth: 700px;
   border: 0;
   margin-top: -10px;
 
-  @include contentItemRhythm;
+  @include contentRhythmParagraph;
 
   &:before {
     content: '...';
@@ -140,7 +149,7 @@ $contentWidth: 700px;
   background-color: #F2FAFC;
   color: #3171A1;
 
-  @include contentItemRhythm;
+  @include contentRhythmParagraph;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     font-size: 14px;
@@ -157,12 +166,12 @@ $contentWidth: 700px;
 }
 
   .panelTitle {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     font-weight: 700;
   }
 
   .panel__p {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
 .quote {
@@ -170,6 +179,7 @@ $contentWidth: 700px;
   padding-left: 30px;
 
   @include contentItem;
+  @include contentRhythmParagraph;
 
   @include whenNarrowerThan($condensedBreakpoint) {
     padding-left: 20px;
@@ -198,7 +208,7 @@ $contentWidth: 700px;
   }
 
     .quoteBody__p {
-      @include contentItemRhythm;
+      @include contentRhythmParagraph;
     }
 
   .quoteFooter {
