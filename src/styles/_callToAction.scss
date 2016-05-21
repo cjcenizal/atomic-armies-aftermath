@@ -1,4 +1,5 @@
 
+$ctaComfyBreakpoint: 1100px;
 $ctaSqueezeBreakpoint: 950px;
 $ctaStackBreakpoint: 780px;
 $ctaCondensedBreakpoint: 520px;
@@ -19,7 +20,7 @@ $ctaCondensedBreakpoint: 520px;
 }
 
 .callToActionSection {
-  padding: 20px 30px 30px;
+  padding: 60px 60px 80px;
 
   & + & {
     border-left: 1px dotted #CDD0D7;
@@ -28,6 +29,10 @@ $ctaCondensedBreakpoint: 520px;
       border-left: none;
       border-top: 1px dotted #CDD0D7;
     }
+  }
+
+  @include whenNarrowerThan($ctaComfyBreakpoint) {
+    padding: 30px 30px 40px;
   }
 
   @include whenNarrowerThan($ctaStackBreakpoint) {
@@ -135,7 +140,7 @@ $ctaCondensedBreakpoint: 520px;
   }
 
   .flag__body {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
 .headshot {
@@ -143,7 +148,6 @@ $ctaCondensedBreakpoint: 520px;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 136px;
   height: 126px;
 
   @include whenNarrowerThan($ctaCondensedBreakpoint) {
